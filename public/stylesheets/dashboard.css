@@ -1,8 +1,10 @@
 body { 
   padding-top: 70px; 
+  background-color: rgb(241, 242, 246);
 }
 
-.content {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+.ppt-name {
+  font-size: 20px;
+  font-weight: 400;
 }
+
