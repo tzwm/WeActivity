@@ -10,3 +10,7 @@ exports.index = function(req, res){
 exports.dashboard = function(req, res){
   res.render('dashboard', { title: 'Dashboard' });
 };
+
+exports.upload = function(req, res){
+  res.render('upload', { title: 'Upload' });
+};

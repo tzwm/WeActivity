@@ -1,0 +1,6 @@
+[submodule "public/libs/reveal.js"]
+	path = public/libs/reveal.js
+	url = https://github.com/hakimel/reveal.js
+[submodule "public/libs/impress.js"]
+	path = public/libs/impress.js
+	url = https://github.com/bartaz/impress.js
