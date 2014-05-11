@@ -1,0 +1,16 @@
+/**
+ * Created by van on 14-4-21.
+ */
+
+$step-padding: 25%;
+$step-padding-767: 60%;
+
+.steps {
+  font-size: 30px;
+
+  .step {
+    background: #ffffff;
+    margin: 5px;
+    min-height: 100%;
+  }
+}

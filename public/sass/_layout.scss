@@ -1,0 +1,42 @@
+/**
+ * Created by van on 14-4-20.
+ */
+@import "compass/css3";
+@import "navbar";
+
+/* wrap */
+$footer-height: 100px;
+#wrap {
+  min-height: 100%;
+  padding-bottom: $footer-height;
+}
+
+/* content */
+#content {
+  padding-top: 60px;
+  margin-bottom: 10px;
+}
+
+/* footer */
+.footer {
+  background: #434a54;
+  color: #ffffff;
+  padding-top: 20px;
+  height: $footer-height;
+  margin-top: -$footer-height;
+
+  .logo {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .links {
+    ul > li {
+      @include inline-block;
+    }
+  }
+
+  .copyright {
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,119 @@
+/**
+ * Created by van on 14-4-20.
+ */
+
+@import "mixins";
+@import "compass/css3";
+
+.navbar {
+  z-index: 1000;
+
+  .navbar-inner {
+    margin: 40px -15px 0 -15px;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.navbar-absolute-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+
+  .navbar-brand, .navbar-link, .btn-link {
+    color: #ffffff;
+
+    &:hover, &:focus {
+      color: #e3e3e3;
+      background-color: transparent;
+    }
+  }
+
+  .navbar-text, .navbar-nav > li > a {
+    color: #e6e9ed;
+  }
+
+  .navbar-nav {
+    > li > a:hover,
+    > li > a:focus,
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus,
+    > .open > a,
+    > .open > a:hover,
+    > .open > a:focus {
+      color: #ffffff;
+      @include background_transparent(black, 0.125);
+    }
+  }
+
+  .navbar-toggle {
+    background-color: #000000;
+    border-color: #000000;
+
+    &:hover, &:focus {
+      background-color: #1a1a1a;
+      border-color: #1a1a1a;
+    }
+
+    .icon-bar {
+      background-color: #8c8c8c;
+    }
+  }
+
+  .navbar-collapse, .navbar-form {
+    border-color: black;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .navbar-transparent {
+    background: #333;
+    border-color: #333;
+
+    .navbar-nav {
+
+      li a {
+        &:hover, &:focus {
+          background-color: black;
+        }
+      }
+
+      .open .dropdown-menu > {
+        .dropdown-header {
+          color: #bfbfbf;
+        }
+
+        .divider {
+          background-color: black;
+        }
+
+        li > a {
+          color: #8c8c8c;
+
+          &:hover,
+          &:focus, {
+            color: white;
+            background-color: black;
+          }
+        }
+
+        .active > a {
+          color: white;
+          background-color: black;
+        }
+
+        .disabled > a {
+          color: #666;
+        }
+      }
+    }
+  }
+}
