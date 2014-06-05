@@ -1,0 +1,94 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "preset";
+@import "layout";
+@import "form";
+
+// for home page, image slider
+$slider-large-height: 800px;
+$slider-medium-height: 600px;
+$slider-small-height: 400px;
+
+.full-width-slider {
+  width: 100%;
+  height: $slider-large-height;
+
+  @media screen and (max-height: 940px) {
+    height: $slider-medium-height;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: $slider-small-height;
+  }
+}
+
+.full-width-slider .slide-1 {
+  color: #ffffff;
+  background-image: url("../image/homepage-background.jpg") !important;
+}
+
+.full-width-slider .slide-2 {
+  color: #ffffff;
+  background-image: url("../image/homepage-background-grass.jpg") !important;
+}
+
+.intro-item {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .intro-photo {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+
+    @media screen and (max-width: 767px) {
+      position: relative;
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+  .intro-contents {
+    display: inline-block;
+    width: 45%;
+    padding-left: 40px;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      padding-left: 0;
+      text-align: center !important;
+    }
+
+    h1, h2, h3 {
+      font-size: 10px;
+    }
+  }
+}
+
+@import "list";
+@import "activity_item";
+.search-container {
+  overflow: auto;
+}
+
+.pages {
+  text-align: center;
+}
+
+@import "steps";

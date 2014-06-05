@@ -1,0 +1,17 @@
+/**
+ * Created by van on 14-4-20.
+ */
+
+.search-list {
+  width: 100%;
+
+  .search-list-item {
+    width: 50%;
+    float: left;
+
+    @media screen and (max-width: 767px) {
+      width: auto;
+      float: none;
+    }
+  }
+}

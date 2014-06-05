@@ -1,0 +1,63 @@
+/**
+ * Created by van on 14-4-20.
+ */
+@import "compass/css3";
+
+$photo-width: 60px;
+$time-card-width: 80px;
+$padding-10: 10px;
+
+.activity-item {
+  padding: 10px;
+  margin: 0 5px 5px 5px;
+  background: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+    background: #eeeeee;
+  }
+
+  .content {
+    margin-left: $photo-width + $padding-10;
+    margin-right: $time-card-width;
+    .header {
+      .title {
+      }
+
+      .photo {
+        float: left;
+        max-width: $photo-width;
+        max-height: $photo-width;
+        margin-left: -$photo-width - $padding-10;
+      }
+    }
+
+    .description {
+      word-wrap: break-word;
+    }
+
+    .item-footer {
+      padding-top: $padding-10;
+      ul {
+        li {
+          @include inline-block();
+        }
+      }
+    }
+  }
+
+  .time-card {
+    float: right;
+    width: $time-card-width;
+    padding: $padding-10;
+    font-size: 12px;
+
+    .date {
+
+    }
+
+    .time {
+
+    }
+  }
+}

@@ -1,0 +1,118 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+@import "compass/utilities/general/min";
+@import "compass/css3";
+
+.dd {
+  margin: 10px;
+}
+
+.container {
+  width: 1170px;
+}
+
+/* navbar */
+.navbar-left {
+  float: left !important;
+
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+}
+
+.navbar-right {
+  float: right !important;
+
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+.navbar {
+  height: 50px;
+
+  .container {
+    .navbar-header {
+      float: left;
+
+      .navbar-toggle {
+        display: none;
+      }
+    }
+
+    .navbar-collapse {
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+
+      .navbar-form {
+        border: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        .form-control {
+          width: auto;
+          padding: 0 0 0 40px;
+          font-size: 15px;
+          line-height: 30px;
+        }
+
+        .form-group {
+          display: inline-block;
+          margin-bottom: 0;
+          vertical-align: middle;
+        }
+      }
+
+      .navbar-nav {
+        float: left;
+        margin: 0;
+
+        > li {
+          position: relative;
+          display: block;
+          float: left;
+
+          > a {
+            padding: 15px;
+          }
+        }
+      }
+    }
+
+    .navbar-collapse.collapse {
+      display: block;
+    }
+  }
+}
+
+/* form */
+.form-container {
+  .content {
+    .input-group {
+      @include inline-block;
+      $content-height: 25px;
+
+      .input-group-addon {
+        display: block;
+      }
+      
+      .form-control {
+        display: block;
+        float: left;
+        width: 50%;
+        height: $content-height;
+        line-height: $content-height;
+      }
+    }
+  }
+}
