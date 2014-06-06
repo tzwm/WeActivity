@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Try</title>
+  <title>Explore</title>
   <!-- Sets initial viewport load and disables zooming  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../stylesheets/dist/bootstrap.css">
-  <link rel="stylesheet" href="../stylesheets/dist/slick.css"/>
-  <link rel="stylesheet" href="../stylesheets/dist/font-awesome.css"/>
-  <link rel="stylesheet" href="../stylesheets/site.css"/>
+  <link rel="stylesheet" href="/stylesheets/dist/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/dist/slick.css"/>
+  <link rel="stylesheet" href="/stylesheets/dist/font-awesome.css"/>
+  <link rel="stylesheet" href="/stylesheets/site.css"/>
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" href="../stylesheets/dist/font-awesome-ie7.css"/>
@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="../../" class="navbar-brand">WeActivity</a>
+        <a href="/" class="navbar-brand">WeActivity</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
         <form class="navbar-form navbar-left" role="search">
@@ -41,20 +41,20 @@
         </form>
         <ul class="nav navbar-nav">
           <li>
-            <a href='index.html'>Home</a>
+            <a href='/index'>Home</a>
           </li>
           <li>
-            <a href='explore.html'>Explore</a>
+            <a href='/explore'>Explore</a>
           </li>
           <li>
-            <a href='try.html'>Try it!</a>
+            <a href='/try'>Try it!</a>
           </li>
           <li>
-            <a href="signin.html">
+            <a href="/signin">
               Signin<span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="signup.html">Sign Up!</a></li>
+              <li><a href="/signup">Sign Up!</a></li>
               <li><a href="#">Another action</a></li>
             </ul>
           </li>
@@ -63,23 +63,36 @@
     </div>
   </header>
   <div id="content" class="container">
-    <ul class="steps">
-      <li id="one" class="step">
-        <p>First Step, Upload Your Slides</p>
-        <input type="file" class="btn-default"/>
-      </li>
-      <li id="two" class="step">
-        <p>Second Step, Enter into Controlling Page:</p>
-        <a href="">http://www.example.com</a>
-      </li>
-      <li id="three" class="step">
-        <p>Finally, Share the Url or the QR Code to Your Audience</p>
-        <div class="">
-          <img src="">
-          <a></a>
+    <div class="form-container">
+      <div class="header">
+        <div class="title">
+          Sign up
         </div>
-      </li>
-    </ul>
+      </div>
+      <div class="content">
+        <form class="form-horizontal" method="post" action="">
+          <div class="form-group">
+            <label class="control-label">Username:</label>
+              <input type="text" name="username" class="form-control" placeholder="Username"/>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password:</label>
+            <input type="text" class="form-control" placeholder="Password"/>
+          </div>
+          <div class="form-group">
+            <label class="control-label">E-mail:</label>
+            <input type="text" class="form-control" placeholder="address@exmaple.com"/>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-warning" value="Sign up"/>
+          </div>
+          <hr/>
+          <div class="links">
+            <a href="/signin">Already have one?</a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <div class="footer">
@@ -100,8 +113,8 @@
   </div>
 </div>
 
-<script src="../javascripts/jquery-1.11.0.min.js"></script>
-<script src="../javascripts/bootstrap.min.js"></script>
-<script src="../javascripts/site.js"></script>
+<script src="/javascripts/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/site.js"></script>
 </body>
 </html>

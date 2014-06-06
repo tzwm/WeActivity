@@ -9,8 +9,24 @@ var ppt2png = require('ppt2png');
 var fs = require('fs');
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'WeActivity' });
 };
+
+exports.explore = function(req, res) {
+  res.render('explore', { title: 'WeActivity' });
+}
+
+exports.signup = function(req, res) {
+  res.render('signup', { title: 'WeActivity' });
+}
+
+exports.signin = function(req, res) {
+  res.render('signin', { title: 'WeActivity' });
+}
+
+exports.tryPage = function(req, res) {
+  res.render('try', { title: 'WeActivity' });
+}
 
 exports.dashboard = function(req, res){
   res.render('dashboard', { title: 'Dashboard' });

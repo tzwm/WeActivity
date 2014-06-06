@@ -1,11 +1,170 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <!-- Sets initial viewport load and disables zooming  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/dist/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/dist/slick.css"/>
+  <link rel="stylesheet" href="/stylesheets/dist/font-awesome.css"/>
+  <link rel="stylesheet" href="/stylesheets/site.css"/>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="../stylesheets/dist/font-awesome-ie7.css"/>
+  <link rel="stylesheet" href="../stylesheets/ie.css"/>
+  <script src="/javascripts/html5shiv.js"></script>
+  <script src="/javascripts/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div id="wrap">
+  <header class="navbar navbar-transparent navbar-absolute-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse"
+                  data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">WeActivity</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group search-only">
+              <i class="search-icon icon-search"></i>
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </form>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/explore'>Explore</a>
+            </li>
+            <li>
+              <a href='/try'>Try it!</a>
+            </li>
+            <li>
+              <a href="/signin">
+                Signin<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/signup">Sign Up!</a></li>
+                <li><a href="#">Another action</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="main">
+    <div class="full-width-slider">
+      <div class="slider single-item">
+        <div class="slide-1"></div>
+        <div class="slide-2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+
+  <div class="container">
+    <ul class="intro-list">
+      <li class="intro-item">
+        <div class="intro-photo"><img src="/image/Jumbotron.jpg"></div>
+        <div class="intro-contents">
+          <h1>Implementing the HTML and CSS into your user interface project</h1>
+
+          <h2>HTML Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+
+          <h2>CSS Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+        </div>
+      </li>
+      <li class="intro-item">
+        <div class="intro-photo"><img src="/image/Jumbotron.jpg"></div>
+        <div class="intro-contents">
+          <h1>Implementing the HTML and CSS into your user interface project</h1>
+
+          <h2>HTML Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+
+          <h2>CSS Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+        </div>
+      </li>
+      <li class="intro-item">
+        <div class="intro-photo"><img src="/image/Jumbotron.jpg"></div>
+        <div class="intro-contents">
+          <h1>Implementing the HTML and CSS into your user interface project</h1>
+
+          <h2>HTML Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+
+          <h2>CSS Structure</h2>
+
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured
+            content or information.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="logo">
+      WeActivity
+    </div>
+    <div class="links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+    <div class="copyright">
+      Copyright © 2014 PotatoNi. All rights reserved.
+    </div>
+  </div>
+</div>
+
+
+<script src="/javascripts/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/slick.js"></script>
+<script src="/javascripts/site.js"></script>
+<script>
+  $('.single-item').slick({
+    dots: true,
+    responsive: {
+      settings: {
+        dots: true
+      }
+    }
+  });
+</script>
+</body>
 </html>
