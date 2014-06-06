@@ -10,6 +10,7 @@
     "ejs": "*",
     "ppt2png": "*",
     "formidable": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "mongoose": "3.9.0"
   }
 }
