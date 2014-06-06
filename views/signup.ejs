@@ -20,48 +20,7 @@
 <body>
 
 <div id="wrap">
-  <header class="navbar navbar-inverse bs-docs-nav navbar-fixed-top" role="banner">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse"
-                data-target=".bs-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/" class="navbar-brand">WeActivity</a>
-      </div>
-      <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group search-only">
-            <i class="search-icon icon-search"></i>
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
-        <ul class="nav navbar-nav">
-          <li>
-            <a href='/index'>Home</a>
-          </li>
-          <li>
-            <a href='/explore'>Explore</a>
-          </li>
-          <li>
-            <a href='/try'>Try it!</a>
-          </li>
-          <li>
-            <a href="/signin">
-              Signin<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="/signup">Sign Up!</a></li>
-              <li><a href="#">Another action</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <% include layouts/header %>
   <div id="content" class="container">
     <div class="form-container">
       <div class="header">
@@ -95,23 +54,8 @@
     </div>
   </div>
 </div>
-<div class="footer">
-  <div class="container">
-    <div class="logo">
-      WeActivity
-    </div>
-    <div class="links">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-      </ul>
-    </div>
-    <div class="copyright">
-      Copyright © 2014 PotatoNi. All rights reserved.
-    </div>
-  </div>
-</div>
+
+<% include layouts/footer %>
 
 <script src="/javascripts/jquery-1.11.0.min.js"></script>
 <script src="/javascripts/bootstrap.min.js"></script>
