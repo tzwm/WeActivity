@@ -4,47 +4,39 @@
  */
 
 var fs = require('fs');
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
 var path = require('path');
 
+var express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var morgan = require('morgan');
+var session = require('express-session');
+var serveStatic = require('serve-static');
+var errorhandler = require('errorhandler');
+
+
 var app = express();
-var server = http.createServer(app);
+var server = app.listen(8080);
 var io = require('socket.io').listen(server);
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
-app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser());
+app.use(serveStatic('public'));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorhandler());
 }
 
 // routes
-app.get('/', routes.index);
-app.get('/explore', routes.explore);
-app.get('/signup', routes.signup);
-app.get('/signin', routes.signin);
-app.get('/try', routes.tryPage);
-//app.get('/users', user.list);
-app.get('/dashboard', routes.dashboard);
-app.get('/upload', routes.upload);
-app.post('/upload', routes.doUpload);
-app.get('/client', routes.client);
-app.get('/controller', routes.controller);
+app.use('/', require('./routes/static_pages').static_pages);
+
+app.get('/signup', require('./routes/users').signup);
+app.use('/users', require('./routes/users').users);
+
 
 
 server.listen(app.get('port'), function(){
