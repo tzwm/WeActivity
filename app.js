@@ -43,6 +43,8 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+
+// tmp
 io.sockets.on('connection', function(socket) {
   socket.on('change', function(data) {
     console.log('haha');
