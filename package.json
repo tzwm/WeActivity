@@ -17,6 +17,9 @@
     "mongoose": "~3.9.0",
     "ppt2png": "*",
     "formidable": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "mocha": "*",
+    "chai": "*",
+    "superagent": "*"
   }
 }
