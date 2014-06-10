@@ -18,9 +18,9 @@ var UserSchema = new Schema({
 
 
 // Validates 
-UserSchema.virtual('password').validate(function(password) {
-  return password.length >= 6; 
-}, 'Password length should be greater than or equal to 6.');
+//UserSchema.virtual('password').validate(function(password) {
+  //return password.length >= 6; 
+//}, 'Password length should be greater than or equal to 6.');
 
 UserSchema.path('username').validate(function(username) {
   return username.length >= 4;
@@ -77,5 +77,5 @@ UserSchema.methods = {
 
 }
 
-module.exports = mongoose.model('User', UserSchema);
-//mongoose.model('User', UserSchema);
+//module.exports = mongoose.model('User', UserSchema);
+mongoose.model('User', UserSchema);
