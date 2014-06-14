@@ -11,9 +11,12 @@ exports.create = function(req, res) {
   user.save(function(err) {
     if(err) {
       console.log(err);
+      req.flash('error', err);
       return res.render('signup');
     } 
-
+    
+    req.flash('success', 'signup successfull');
+    req.session.user = user;
     res.redirect('/');
   });
 }
@@ -24,7 +27,8 @@ exports.login = function(req, res) {
 }
 
 exports.logout = function(req, res) {
-  req.logout();
+  req.session.user = null;
+  req.flash('success', 'logout successful');
   res.redirect('/');
 }
 
@@ -37,16 +41,18 @@ var login = function(req, res) {
   User.authenticate(req.body, function(err, user, data) {
     if(err){
       console.log(err);
-      res.redirect('/login');
-      return;
+      req.flash('error', err);
+      return res.redirect('/login');
     }
 
     if(!user){
       console.log(data.message);
-      res.redirect('/login');
-      return;
+      req.flash('error', data.message);
+      return res.redirect('/login');
     }
-
+    
+    req.session.user = user;
+    req.flash('success', 'login successful');
     res.redirect('/');
   });
 }
