@@ -10,6 +10,7 @@ var UserSchema = new Schema({
   username : { type: String, required: true,
                index: { unique: true } },
   hashed_password : { type: String, required: true},
+  salt : { type: String, require: true },
   email    : { type: String, required: true, 
                match: VAILD_EMAIL_REGEX,
                index: { unique: true } },
@@ -76,6 +77,25 @@ UserSchema.methods = {
   }
 
 }
+
+
+//Statics 
+UserSchema.statics.authenticate = function(data, callback) {
+  var u = this.findOne({username: data.username}, function(err, user){
+    if(err) 
+      return callback(err);
+
+    if(!user)
+      return callback(null, false, { message: 'Unknown user' });
+
+    if(!user.authenticate(data.password)) {
+      return callback(null, false, { message: 'Invalid password' });
+    }
+
+    return callback(null, user);
+  });
+}
+
 
 //module.exports = mongoose.model('User', UserSchema);
 mongoose.model('User', UserSchema);

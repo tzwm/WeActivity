@@ -11,4 +11,9 @@ module.exports = function(app) {
   app.get('/signup', users.new);
   app.get('/users/new', users.new);
   app.post('/users', users.create);
+
+  //session routes
+  app.get('/login', users.login);
+  app.get('/logout', users.logout);
+  app.post('/users/session', users.session);
 }

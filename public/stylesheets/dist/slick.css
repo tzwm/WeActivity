@@ -30,7 +30,7 @@
 }
 
 .slick-loading .slick-list {
-  background: white url(../img/ajax-loader.gif) center center no-repeat;
+  background: white url(./image/ajax-loader.gif) center center no-repeat;
 }
 
 .slick-list.dragging {
