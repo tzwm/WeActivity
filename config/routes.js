@@ -1,11 +1,15 @@
 var static_pages = require('../app/controllers/static_pages'),
-    users = require('../app/controllers/users');
+    users = require('../app/controllers/users'),
+    tryit = require('../app/controllers/tryit');
 
 module.exports = function(app) {
   //static pages routes
   app.get('/', static_pages.index);
-  app.get('/try', static_pages.try);
   app.get('/explore', static_pages.explore);
+
+  //try routes
+  app.get('/tryit', tryit.show);
+  app.post('/tryit/new', tryit.create);
 
   //user routes 
   app.get('/signup', users.new);
