@@ -1,0 +1,32 @@
+header.navbar.navbar-inverse.bs-docs-nav.navbar-fixed-top(role="banner")
+  .container
+    .navbar-header
+      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".bs-navbar-collapse")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="/") WeActivity
+
+    nav.collapse.navbar-collapse.bs-navbar-collapse.navbar-right(role="navigation")
+      form.navbar-form.navbar-left(role="search")
+        .form-group.search-only
+          i.search-icon.icon-search
+          input.form-control(type="text", placeholder="Search")
+      
+      ul.nav.navbar-nav
+        li
+          a(href="/") Home
+        li
+          a(href="/explore") Explore
+        li
+          a(href="/tryit") Try it!
+        li
+          a(href="/login") Signin
+            span.caret
+          ul.dropdown-menu(role="menu")
+            li
+              a(href="/signup") Sign Up!
+            li
+              a(href="#") Another action
+

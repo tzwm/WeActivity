@@ -43,7 +43,7 @@ module.exports = function (app, config) {
 
   // set views path, template engine and default layout
   app.set('views', config.root + '/app/views');
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'jade');
 
 
   // cookieParser should be above session
