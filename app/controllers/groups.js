@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'),
     Group = mongoose.model('Group');
 
-var addGroupPage = 'addgroup',
+var addGroupPage = 'addgroup'
+	showGroupsPage = 'showgroups',
 	loginUrl = '/login',
 	homeUrl = '/';
 
@@ -26,6 +27,18 @@ exports.create = function(req, res) {
 		}
 
 		req.flash('success', 'adding new group successfully');
-		res.render(homeUrl);
+		res.redirect(homeUrl);
+	});
+};
+
+exports.getall = function(req, res) {
+	Group.findAll(function(err, groups) {
+		if (err) {
+			console.log(err);
+			req.flash('error', err);
+			return res.redirect;
+		}
+
+		res.send(groups);
 	});
 };

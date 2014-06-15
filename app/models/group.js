@@ -34,10 +34,18 @@ GroupSchema.methods.addAdminUser = function(username, handleError) {
 	});
 };
 
+
+
 //Statics
+
 //findById - callback(err, group)
 GroupSchema.statics.findById = function(groupId, callback) {
 	this.findOne({'groupId': groupId}).exec(callback);
+};
+
+//findAll - callback(err, groups)
+GroupSchema.statics.findAll = function(callback) {
+	this.find({}).exec(callback);
 };
 
 GroupSchema.plugin(autoIncrement.plugin, { model: 'Group', field: 'groupId', startAt: 1 });
