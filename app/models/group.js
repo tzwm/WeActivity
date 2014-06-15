@@ -10,7 +10,7 @@ var GroupSchema = new Schema({
 	name: { type: String, required: true, index: { unique: true } },
 	introduction: { type: String },
 	startTime: { type: Date, default: Date.now},
-	endTime: { type: Date, required: true },
+	endTime: { type: Date, default: Date.now },
 	lectures: [ Number ],
 	isUnderway: { type: Boolean, default: false },
 	adminUsers: [ String ]
