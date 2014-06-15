@@ -9,7 +9,7 @@ var GroupSchema = new Schema({
 	groupId: { type: Number, required: true, index: { unique: true } },
 	name: { type: String, required: true, index: { unique: true } },
 	introduction: { type: String },
-	startTime: { type: Date, required: true, default: Date.now},
+	startTime: { type: Date, default: Date.now},
 	endTime: { type: Date, required: true },
 	lectures: [ Number ],
 	isUnderway: { type: Boolean, default: false },
@@ -18,16 +18,25 @@ var GroupSchema = new Schema({
 
 //Validators
 GroupSchema.path('name').validate(function(name) {
-	return name.length;
+	return name != null && name.length;
 }, 'Invalid name of group');
 
 //Methods
-GroupSchema.methods.addAdminUser = function(username, callback) {
-
+GroupSchema.methods.addAdminUser = function(username, handleError) {
+	var User = mongoose.model('User');
+	User.findByUsername(username, function(err, user) {
+		if (err) {
+			return handleError(err);
+		}
+		if (user) {
+			this.adminUsers.push(username);
+		}
+	});
 };
 
 //Statics
-GroupSchema.statics.findGroupById = function(groupId, callback) {
+//findById - callback(err, group)
+GroupSchema.statics.findById = function(groupId, callback) {
 	this.findOne({'groupId': groupId}).exec(callback);
 };
 

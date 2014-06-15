@@ -14,8 +14,10 @@ exports.create = function(req, res) {
 		req.flash('error', 'not logged in');
 		return res.redirect(loginUrl);
 	}
+	console.log(req.session.user);
 
 	var group = new Group(req.body);
+	group.adminUsers.push(req.session.user.username);
 	group.save(function(err) {
 		if (err) {
 			console.log(err);
@@ -23,7 +25,7 @@ exports.create = function(req, res) {
 			return res.render(addGroupPage);
 		}
 
-		req.flush('success', 'adding new group successfully');
+		req.flash('success', 'adding new group successfully');
 		res.render(homeUrl);
 	});
 };

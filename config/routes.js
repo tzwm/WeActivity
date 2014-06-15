@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.post('/users/session', users.session);
 
   //group routes
-  app.get('/group/new', group.new);
+  app.get('/group/new', groups.new);
   //group rests
-  app.post('/groups', groups);
+  app.post('/groups', groups.create);
 }
