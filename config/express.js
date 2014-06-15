@@ -7,6 +7,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     morgan = require('morgan'),
+    compass = require('node-compass'),
     serveStatic = require('serve-static'),
     errorhandler = require('errorhandler'),
     pkg = require('../package.json');
@@ -45,6 +46,12 @@ module.exports = function (app, config) {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'jade');
 
+  // sass and compass
+  app.use(compass({ 
+    project: config.root + '/public/',
+    css: 'css',
+    sass:'sass',
+  }));
 
   // cookieParser should be above session
   app.use(cookieParser());
