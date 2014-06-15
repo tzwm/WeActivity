@@ -10,7 +10,7 @@ var GroupSchema = new Schema({
 	name: { type: String, required: true, index: { unique: true } },
 	introduction: { type: String },
 	startTime: { type: Date, default: Date.now},
-	endTime: { type: Date, required: true },
+	endTime: { type: Date, default: Date.now },
 	lectures: [ Number ],
 	isUnderway: { type: Boolean, default: false },
 	adminUsers: [ String ]
@@ -34,10 +34,18 @@ GroupSchema.methods.addAdminUser = function(username, handleError) {
 	});
 };
 
+
+
 //Statics
+
 //findById - callback(err, group)
 GroupSchema.statics.findById = function(groupId, callback) {
 	this.findOne({'groupId': groupId}).exec(callback);
+};
+
+//findAll - callback(err, groups)
+GroupSchema.statics.findAll = function(callback) {
+	this.find({}).exec(callback);
 };
 
 GroupSchema.plugin(autoIncrement.plugin, { model: 'Group', field: 'groupId', startAt: 1 });

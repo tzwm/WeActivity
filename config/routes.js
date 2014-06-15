@@ -24,6 +24,6 @@ module.exports = function(app) {
 
   //group routes
   app.get('/group/new', groups.new);
-  //group rests
+  app.get('/groups', groups.getall);
   app.post('/groups', groups.create);
 }
