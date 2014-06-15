@@ -24,6 +24,7 @@
     "winston": "~0.7.3",
     "mocha": "*",
     "chai": "*",
-    "superagent": "*"
+    "superagent": "*",
+    "mongoose-auto-increment": "*"
   }
 }

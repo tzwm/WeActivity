@@ -95,6 +95,10 @@ UserSchema.statics.authenticate = function(data, callback) {
     return callback(null, user);
   });
 }
+//findByUsername - callback(err, name)
+UserSchema.statics.findByUsername = function(username, callback) {
+  this.findOne({'username': username}).exec(callback);
+};
 
 
 //module.exports = mongoose.model('User', UserSchema);

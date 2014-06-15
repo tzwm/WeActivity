@@ -1,6 +1,7 @@
 var static_pages = require('../app/controllers/static_pages'),
     users = require('../app/controllers/users'),
-    tryit = require('../app/controllers/tryit');
+    tryit = require('../app/controllers/tryit'),
+    groups = require('../app/controllers/groups');
 
 module.exports = function(app) {
   //static pages routes
@@ -20,4 +21,9 @@ module.exports = function(app) {
   app.get('/login', users.login);
   app.get('/logout', users.logout);
   app.post('/users/session', users.session);
+
+  //group routes
+  app.get('/group/new', groups.new);
+  //group rests
+  app.post('/groups', groups.create);
 }
