@@ -1,12 +1,12 @@
-var static_pages = require('../app/controllers/static_pages'),
+var home = require('../app/controllers/home'),
     users = require('../app/controllers/users'),
     tryit = require('../app/controllers/tryit'),
     groups = require('../app/controllers/groups');
 
 module.exports = function(app) {
   //static pages routes
-  app.get('/', static_pages.index);
-  app.get('/explore', static_pages.explore);
+  app.get('/', home.index);
+  app.get('/explore', home.explore);
 
   //try routes
   app.get('/tryit', tryit.show);

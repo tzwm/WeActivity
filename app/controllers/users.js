@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 
 exports.new = function(req, res) {
-  res.render('signup');
+  res.render('users/signup');
 }
 
 exports.create = function(req, res) {
@@ -13,7 +13,7 @@ exports.create = function(req, res) {
     if(err) {
       console.log(err);
       req.flash('error', err);
-      return res.render('signup');
+      return res.render('users/signup');
     } 
     
     req.flash('success', 'signup successfull');
@@ -24,7 +24,7 @@ exports.create = function(req, res) {
 
 
 exports.login = function(req, res) {
-  res.render('login');
+  res.render('users/login');
 }
 
 exports.logout = function(req, res) {

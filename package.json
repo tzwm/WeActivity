@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "express": "4.x",
-    "ejs": "*",
     "jade": "*",
     "body-parser": "~1.3.0",
     "cookie-parser": "~1.1.0",

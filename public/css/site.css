@@ -379,13 +379,13 @@ div, ul, li {
 /* line 28, ../sass/site.scss */
 .full-width-slider .slide-1 {
   color: #ffffff;
-  background-image: url("../images/homepage-background.jpg") !important;
+  background-image: url("../img/homepage-background.jpg") !important;
 }
 
 /* line 33, ../sass/site.scss */
 .full-width-slider .slide-2 {
   color: #ffffff;
-  background-image: url("../images/homepage-background-grass.jpg") !important;
+  background-image: url("../img/homepage-background-grass.jpg") !important;
 }
 
 /* line 38, ../sass/site.scss */

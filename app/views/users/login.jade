@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block main
+  #content.container
+    .form-container
+      .header
+        .title
+          | Sign in
+      .content
+        form(method='post', action='/users/session')
+          .input-group
+            span.input-group-addon
+              i.icon-user
+            input.form-control(type='text', placeholder='Username', name='username')
+          .input-group
+            span.input-group-addon
+              i.icon-lock
+            input.form-control(type='password', placeholder='Password', name='password')
+          .input-group
+            label.checkbox
+              input(type='checkbox', name='remember', value='value')
+              | Remember me
+          .input-group
+            input.btn.btn-primary(type='submit', value='Sign in')
+          hr
+          .links
+            a(href='/signup') Don't have an account
+            a(href='#') Forget password
+  
