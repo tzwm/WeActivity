@@ -1,7 +1,7 @@
 var formidable = require('formidable');
 
 exports.show = function(req, res) {
-  res.render('tryit');
+  res.render('home/tryit');
 }
 
 exports.create = function(req, res) {

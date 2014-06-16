@@ -1,1 +1,604 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}html,body{height:100%}body{background:#efeee4}div,ul,li{position:relative;display:block}.navbar{z-index:1000}.navbar .navbar-inner{margin:40px -15px 0 -15px}@media screen and (max-width: 767px){.navbar .navbar-inner{margin-top:0}}.navbar-absolute-top{position:absolute;top:0;width:100%}.navbar-transparent{background-color:transparent}.navbar-transparent .navbar-brand,.navbar-transparent .navbar-link,.navbar-transparent .btn-link{color:#ffffff}.navbar-transparent .navbar-brand:hover,.navbar-transparent .navbar-brand:focus,.navbar-transparent .navbar-link:hover,.navbar-transparent .navbar-link:focus,.navbar-transparent .btn-link:hover,.navbar-transparent .btn-link:focus{color:#e3e3e3;background-color:transparent}.navbar-transparent .navbar-text,.navbar-transparent .navbar-nav>li>a{color:#e6e9ed}.navbar-transparent .navbar-nav>li>a:hover,.navbar-transparent .navbar-nav>li>a:focus,.navbar-transparent .navbar-nav>.active>a,.navbar-transparent .navbar-nav>.active>a:hover,.navbar-transparent .navbar-nav>.active>a:focus,.navbar-transparent .navbar-nav>.open>a,.navbar-transparent .navbar-nav>.open>a:hover,.navbar-transparent .navbar-nav>.open>a:focus{color:#ffffff;background:#000;background:rgba(0,0,0,0.125);background:transparent\9;zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000, endColorstr=#20000000);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000, endColorstr=#20000000)"}.navbar-transparent .navbar-toggle{background-color:#000000;border-color:#000000}.navbar-transparent .navbar-toggle:hover,.navbar-transparent .navbar-toggle:focus{background-color:#1a1a1a;border-color:#1a1a1a}.navbar-transparent .navbar-toggle .icon-bar{background-color:#8c8c8c}.navbar-transparent .navbar-collapse,.navbar-transparent .navbar-form{border-color:black}@media (max-width: 767px){.navbar-transparent{background:#333;border-color:#333}.navbar-transparent .navbar-nav li a:hover,.navbar-transparent .navbar-nav li a:focus{background-color:black}.navbar-transparent .navbar-nav .open .dropdown-menu>.dropdown-header{color:#bfbfbf}.navbar-transparent .navbar-nav .open .dropdown-menu>.divider{background-color:black}.navbar-transparent .navbar-nav .open .dropdown-menu>li>a{color:#8c8c8c}.navbar-transparent .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-transparent .navbar-nav .open .dropdown-menu>li>a:focus{color:white;background-color:black}.navbar-transparent .navbar-nav .open .dropdown-menu>.active>a{color:white;background-color:black}.navbar-transparent .navbar-nav .open .dropdown-menu>.disabled>a{color:#666}}#wrap{min-height:100%;padding-bottom:100px}#content{padding-top:60px;margin-bottom:10px}.footer{background:#434a54;color:#ffffff;padding-top:20px;height:100px;margin-top:-100px}.footer .logo{float:left;margin-right:10px}.footer .links ul>li{display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline}.footer .copyright{padding-top:10px}.search-only{position:relative}.search-only .form-control{color:#434a54;-webkit-border-radius:25px;-moz-border-radius:25px;-ms-border-radius:25px;-o-border-radius:25px;border-radius:25px}.search-only .search-icon{position:absolute;top:2px;left:8.5px;z-index:20;width:30px;font-size:17px;line-height:30px;color:#e6e9ed;text-align:center}.search-only .form-control{padding-left:40px}.form-container{max-width:480px;margin:5% auto;padding:20px;background:#ffffff}.form-container .header{padding-left:10px}.form-container .header .title{font-size:32px;color:#269abc}.form-container .content{margin-top:10px;padding:0 10px 0 10px}.form-container .content .input-group{width:100%;padding-top:10px}.form-container .content .input-group .form-control{height:40px}.form-container .content .input-group .checkbox{line-height:20px;font-size:12px}.form-container .content .input-group .btn{width:100%;margin-bottom:10px}.form-container .content .input-group i:before{width:11px}.form-container .content .form-group{margin:0;padding-bottom:10px}.form-container .content .form-group .control-label{padding-left:5px;padding-bottom:10px;font-size:13px}.form-container .content .form-group .btn{width:100%;margin-top:10px}.form-container .content hr{margin-top:5px;margin-bottom:5px}.form-container .content .links{font-size:0.8em;text-align:center}.form-container .content .links a{padding-right:10px}.full-width-slider{width:100%;height:800px}@media screen and (max-height: 940px){.full-width-slider{height:600px}}@media screen and (max-width: 767px){.full-width-slider{height:400px}}.full-width-slider .slide-1{color:#ffffff;background-image:url("../img/homepage-background.jpg") !important}.full-width-slider .slide-2{color:#ffffff;background-image:url("../img/homepage-background-grass.jpg") !important}.intro-item{display:inline-block;position:relative;width:100%;padding:20px;border-bottom:1px solid #ccc;background:#fff}.intro-item:last-child{border-bottom:0}.intro-item .intro-photo{position:relative;width:50%;height:100%;float:left}@media screen and (max-width: 767px){.intro-item .intro-photo{position:relative;width:100%;height:auto;float:left}}.intro-item .intro-photo img{width:100%}.intro-item .intro-contents{display:inline-block;width:45%;padding-left:40px}@media screen and (max-width: 767px){.intro-item .intro-contents{width:100%;padding-left:0;text-align:center !important}}.intro-item .intro-contents h1,.intro-item .intro-contents h2,.intro-item .intro-contents h3{font-size:10px}.search-list{width:100%}.search-list .search-list-item{width:50%;float:left}@media screen and (max-width: 767px){.search-list .search-list-item{width:auto;float:none}}.activity-item{padding:10px;margin:0 5px 5px 5px;background:#ffffff}.activity-item:hover{cursor:pointer;background:#eeeeee}.activity-item .content{margin-left:70px;margin-right:80px}.activity-item .content .header .photo{float:left;max-width:60px;max-height:60px;margin-left:-70px}.activity-item .content .description{word-wrap:break-word}.activity-item .content .item-footer{padding-top:10px}.activity-item .content .item-footer ul li{display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline}.activity-item .time-card{float:right;width:80px;padding:10px;font-size:12px}.search-container{overflow:auto}.pages{text-align:center}.steps{font-size:30px}.steps .step{background:#ffffff;margin:5px;min-height:100%}
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+ * Created by van on 14-4-20.
+ */
+/* line 5, ../sass/_preset.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 9, ../sass/_preset.scss */
+body {
+  background: #f1f1f1;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 14, ../sass/_preset.scss */
+div, ul, li {
+  position: relative;
+  display: block;
+}
+
+/**
+ * Created by van on 14-4-20.
+ */
+/**
+ * Created by van on 14-4-20.
+ */
+/**
+ * Created by van on 14-4-20.
+ */
+/* line 8, ../sass/_navbar.scss */
+.navbar {
+  z-index: 1000;
+}
+/* line 11, ../sass/_navbar.scss */
+.navbar .navbar-inner {
+  margin: 40px -15px 0 -15px;
+}
+@media screen and (max-width: 767px) {
+  /* line 11, ../sass/_navbar.scss */
+  .navbar .navbar-inner {
+    margin-top: 0;
+  }
+}
+
+/* line 20, ../sass/_navbar.scss */
+.navbar-absolute-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* line 26, ../sass/_navbar.scss */
+.navbar-transparent {
+  background-color: transparent;
+}
+/* line 29, ../sass/_navbar.scss */
+.navbar-transparent .navbar-brand, .navbar-transparent .navbar-link, .navbar-transparent .btn-link {
+  color: #ffffff;
+}
+/* line 32, ../sass/_navbar.scss */
+.navbar-transparent .navbar-brand:hover, .navbar-transparent .navbar-brand:focus, .navbar-transparent .navbar-link:hover, .navbar-transparent .navbar-link:focus, .navbar-transparent .btn-link:hover, .navbar-transparent .btn-link:focus {
+  color: #e3e3e3;
+  background-color: transparent;
+}
+/* line 38, ../sass/_navbar.scss */
+.navbar-transparent .navbar-text, .navbar-transparent .navbar-nav > li > a {
+  color: #e6e9ed;
+}
+/* line 50, ../sass/_navbar.scss */
+.navbar-transparent .navbar-nav > li > a:hover,
+.navbar-transparent .navbar-nav > li > a:focus,
+.navbar-transparent .navbar-nav > .active > a,
+.navbar-transparent .navbar-nav > .active > a:hover,
+.navbar-transparent .navbar-nav > .active > a:focus,
+.navbar-transparent .navbar-nav > .open > a,
+.navbar-transparent .navbar-nav > .open > a:hover,
+.navbar-transparent .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background: black;
+  background: rgba(0, 0, 0, 0.125);
+  background: transparent\9;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000, endColorstr=#20000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000, endColorstr=#20000000)";
+}
+/* line 56, ../sass/_navbar.scss */
+.navbar-transparent .navbar-toggle {
+  background-color: #000000;
+  border-color: #000000;
+}
+/* line 60, ../sass/_navbar.scss */
+.navbar-transparent .navbar-toggle:hover, .navbar-transparent .navbar-toggle:focus {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+/* line 65, ../sass/_navbar.scss */
+.navbar-transparent .navbar-toggle .icon-bar {
+  background-color: #8c8c8c;
+}
+/* line 70, ../sass/_navbar.scss */
+.navbar-transparent .navbar-collapse, .navbar-transparent .navbar-form {
+  border-color: black;
+}
+
+@media (max-width: 767px) {
+  /* line 77, ../sass/_navbar.scss */
+  .navbar-transparent {
+    background: #333;
+    border-color: #333;
+  }
+  /* line 84, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav li a:hover, .navbar-transparent .navbar-nav li a:focus {
+    background-color: black;
+  }
+  /* line 90, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > .dropdown-header {
+    color: #bfbfbf;
+  }
+  /* line 94, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > .divider {
+    background-color: black;
+  }
+  /* line 98, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > li > a {
+    color: #8c8c8c;
+  }
+  /* line 102, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-transparent .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: white;
+    background-color: black;
+  }
+  /* line 108, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > .active > a {
+    color: white;
+    background-color: black;
+  }
+  /* line 113, ../sass/_navbar.scss */
+  .navbar-transparent .navbar-nav .open .dropdown-menu > .disabled > a {
+    color: #666;
+  }
+}
+/* wrap */
+/* line 9, ../sass/_layout.scss */
+#wrap {
+  min-height: 100%;
+  padding-bottom: 100px;
+}
+
+/* content */
+/* line 15, ../sass/_layout.scss */
+#content {
+  padding-top: 60px;
+  margin-bottom: 10px;
+}
+
+/* footer */
+/* line 21, ../sass/_layout.scss */
+.footer {
+  background: #6f6f6f;
+  color: #ffffff;
+  padding-top: 20px;
+  height: 100px;
+  margin-top: -100px;
+}
+/* line 28, ../sass/_layout.scss */
+.footer .logo {
+  float: left;
+  margin-right: 10px;
+}
+/* line 34, ../sass/_layout.scss */
+.footer .links ul > li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 39, ../sass/_layout.scss */
+.footer .copyright {
+  padding-top: 10px;
+}
+
+/**
+ * Created by van on 14-4-20.
+ */
+/* line 8, ../sass/_form.scss */
+.search-only {
+  position: relative;
+}
+/* line 11, ../sass/_form.scss */
+.search-only .form-control {
+  color: #434a54;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+}
+/* line 17, ../sass/_form.scss */
+.search-only .search-icon {
+  position: absolute;
+  top: 2px;
+  left: 8.5px;
+  z-index: 20;
+  width: 30px;
+  font-size: 17px;
+  line-height: 30px;
+  color: #e6e9ed;
+  text-align: center;
+}
+/* line 29, ../sass/_form.scss */
+.search-only .form-control {
+  padding-left: 40px;
+}
+
+/* for sign in and sign up page */
+/* line 35, ../sass/_form.scss */
+.form-container {
+  max-width: 480px;
+  margin: 5% auto;
+  padding: 20px;
+  background: #ffffff;
+}
+/* line 41, ../sass/_form.scss */
+.form-container .header {
+  padding-left: 10px;
+}
+/* line 43, ../sass/_form.scss */
+.form-container .header .title {
+  font-size: 32px;
+  color: #269abc;
+}
+/* line 49, ../sass/_form.scss */
+.form-container .content {
+  margin-top: 10px;
+  padding: 0 10px 0 10px;
+}
+/* line 55, ../sass/_form.scss */
+.form-container .content .input-group {
+  width: 100%;
+  padding-top: 10px;
+}
+/* line 59, ../sass/_form.scss */
+.form-container .content .input-group .form-control {
+  height: 40px;
+}
+/* line 63, ../sass/_form.scss */
+.form-container .content .input-group .checkbox {
+  line-height: 20px;
+  font-size: 12px;
+}
+/* line 68, ../sass/_form.scss */
+.form-container .content .input-group .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* line 73, ../sass/_form.scss */
+.form-container .content .input-group i:before {
+  width: 11px;
+}
+/* line 78, ../sass/_form.scss */
+.form-container .content .form-group {
+  margin: 0;
+  padding-bottom: 10px;
+}
+/* line 82, ../sass/_form.scss */
+.form-container .content .form-group .control-label {
+  padding-left: 5px;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+/* line 91, ../sass/_form.scss */
+.form-container .content .form-group .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+/* line 97, ../sass/_form.scss */
+.form-container .content hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* line 102, ../sass/_form.scss */
+.form-container .content .links {
+  font-size: 0.8em;
+  text-align: center;
+}
+/* line 106, ../sass/_form.scss */
+.form-container .content .links a {
+  padding-right: 10px;
+}
+
+/* line 15, ../sass/site.scss */
+.full-width-slider {
+  width: 100%;
+  height: 800px;
+}
+@media screen and (max-height: 940px) {
+  /* line 15, ../sass/site.scss */
+  .full-width-slider {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 15, ../sass/site.scss */
+  .full-width-slider {
+    height: 400px;
+  }
+}
+
+/* line 28, ../sass/site.scss */
+.full-width-slider .slide-1 {
+  color: #ffffff;
+  background-image: url("../img/homepage-background.jpg") !important;
+}
+
+/* line 33, ../sass/site.scss */
+.full-width-slider .slide-2 {
+  color: #ffffff;
+  background-image: url("../img/homepage-background-grass.jpg") !important;
+}
+
+/* line 38, ../sass/site.scss */
+.intro-item {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+/* line 46, ../sass/site.scss */
+.intro-item:last-child {
+  border-bottom: 0;
+}
+/* line 50, ../sass/site.scss */
+.intro-item .intro-photo {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  /* line 50, ../sass/site.scss */
+  .intro-item .intro-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: left;
+  }
+}
+/* line 63, ../sass/site.scss */
+.intro-item .intro-photo img {
+  width: 100%;
+}
+/* line 67, ../sass/site.scss */
+.intro-item .intro-contents {
+  display: inline-block;
+  width: 45%;
+  padding-left: 40px;
+}
+@media screen and (max-width: 767px) {
+  /* line 67, ../sass/site.scss */
+  .intro-item .intro-contents {
+    width: 100%;
+    padding-left: 0;
+    text-align: center !important;
+  }
+}
+/* line 78, ../sass/site.scss */
+.intro-item .intro-contents h1, .intro-item .intro-contents h2, .intro-item .intro-contents h3 {
+  font-size: 10px;
+}
+
+/**
+ * Created by van on 14-4-20.
+ */
+/* line 5, ../sass/_list.scss */
+.search-list {
+  width: 100%;
+}
+/* line 8, ../sass/_list.scss */
+.search-list .search-list-item {
+  width: 50%;
+  float: left;
+}
+
+/**
+ * Created by van on 14-4-20.
+ */
+/* line 10, ../sass/_activity_item.scss */
+.activity-item {
+  padding: 10px;
+  margin: 0 5px 5px 5px;
+  background: #ffffff;
+}
+/* line 15, ../sass/_activity_item.scss */
+.activity-item:hover {
+  cursor: pointer;
+  background: #eeeeee;
+}
+/* line 20, ../sass/_activity_item.scss */
+.activity-item .content {
+  margin-left: 70px;
+  margin-right: 80px;
+}
+/* line 27, ../sass/_activity_item.scss */
+.activity-item .content .header .photo {
+  float: left;
+  max-width: 60px;
+  max-height: 60px;
+  margin-left: -70px;
+}
+/* line 35, ../sass/_activity_item.scss */
+.activity-item .content .description {
+  word-wrap: break-word;
+}
+/* line 39, ../sass/_activity_item.scss */
+.activity-item .content .item-footer {
+  padding-top: 10px;
+}
+/* line 42, ../sass/_activity_item.scss */
+.activity-item .content .item-footer ul li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 49, ../sass/_activity_item.scss */
+.activity-item .time-card {
+  float: right;
+  width: 80px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* line 86, ../sass/site.scss */
+.search-container {
+  overflow: auto;
+}
+
+/* line 90, ../sass/site.scss */
+.pages {
+  text-align: center;
+}
+
+/**
+ * Created by van on 14-4-21.
+ */
+/* line 8, ../sass/_steps.scss */
+.steps-header {
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  color: #bbbbbb;
+}
+
+/* line 15, ../sass/_steps.scss */
+.steps {
+  width: 70%;
+  margin: 20px auto;
+}
+/* line 19, ../sass/_steps.scss */
+.steps .step {
+  background: #ffffff;
+  height: 500%;
+  text-align: center;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+/* line 26, ../sass/_steps.scss */
+.steps .step .thumbnail {
+  width: 320px;
+  max-height: 320px;
+  overflow: hidden;
+  padding: 0;
+  margin: 10px auto;
+  border: 0;
+}
+/* line 35, ../sass/_steps.scss */
+.steps .step .header {
+  font-size: 40px;
+  padding: 20px 0;
+  text-align: center;
+}
+/* line 42, ../sass/_steps.scss */
+.steps .step .content button {
+  display: block;
+  margin: 10px auto;
+}
+/* line 47, ../sass/_steps.scss */
+.steps .step .content .dropzone {
+  width: 400px;
+  height: 200px;
+  font-size: 30px;
+  color: #bfbfbf;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+/* line 55, ../sass/_steps.scss */
+.steps .step .content .dropzone span {
+  word-break: break-all;
+}
+/* line 60, ../sass/_steps.scss */
+.steps .step .content .dropzone-normal {
+  border: 2px dashed #bbbbbb;
+}
+/* line 64, ../sass/_steps.scss */
+.steps .step .content .dropzone-error {
+  border: 2px dashed #cc3333;
+}
+/* line 68, ../sass/_steps.scss */
+.steps .step .content .share-link {
+  width: 400px;
+  font-size: 20px;
+  margin: 10px auto;
+  word-break: break-all;
+}
+/* line 76, ../sass/_steps.scss */
+.steps .step .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  padding: 0 20%;
+}
+/* line 86, ../sass/_steps.scss */
+.steps .step .mask .message {
+  top: 45%;
+}

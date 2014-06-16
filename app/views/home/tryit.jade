@@ -1,0 +1,29 @@
+extends ../layouts/default
+block main
+  div#content.container
+    div.steps-header GET STARTED
+    ul.steps
+      li#step-upload.step
+        div.header Publish Your Slides
+        div.content
+          input#input-select-file.hidden(type='file')
+          div#dropzone.dropzone.dropzone-normal
+            span Drop Your File Here!
+            button#btn-select-file.btn.btn-primary.btn-lg Select a file
+          button#btn-upload.btn.btn-warning.btn-lg Upload
+        div#mask.mask.hidden
+          div.message
+            div.progress.progress-striped.active
+              div.progress-bar(role='progressbar', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100', style='width: 100%') Uploading
+      li#step-controlling-page.step.hidden
+        div.header Go to Your Controlling Page
+        div.content
+          div.thumbnail
+            img(src='/img/slide-thumbnail-example.jpg')
+          a#btn-control.btn.btn-info.btn-lg(href='#') Go Control!
+      li#step-share.step.hidden
+        div.header Share to Your Audience
+        div.content
+          img(src='/img/QRCode.jpg')
+          div.share-link Link:
+            a(href='#') http://fakeurl.to.slides
