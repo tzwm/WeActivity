@@ -3,6 +3,15 @@ var mongoose = require('mongoose'),
   fs = require('fs');
 
 
+function compare(a, b) {
+  a = a.substring(a.lastIndexOf('-')+1, a.length);
+  b = b.substring(b.lastIndexOf('-')+1, b.length);
+  a = parseInt(a);
+  b = parseInt(b);
+
+  return a - b;
+}
+
 function render(req, res, side) {
   var opt = {};
   opt[side+'_url'] = req.param('id');
@@ -19,6 +28,7 @@ function render(req, res, side) {
       for(var i = 0; i < data.length; i++) {
         data[i] = "/img/slides/"+filename+"/"+data[i];
       }
+      data.sort(compare);
       res.render('layouts/slides/reveal-'+side, {directories: data});
     });
 }

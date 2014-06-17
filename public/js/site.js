@@ -34,7 +34,10 @@
         success: function (data) {
           // temp for testing
           $('#step-controlling-page .content .thumbnail img').attr('src', data.controllerImg);
+          $('#btn-control').attr('src', data.controllerURL);
           $('#step-share .content img').attr('src', data.clientImg);
+          $('#step-share .content img .share-link a').attr('src', data.clientURL);
+          $('#step-share .content img .share-link a').text(data.clientURL);
 
           $progressBar.addClass('progress-bar-success').text('Upload successfully!');
           $stepControl.removeClass('hidden');
