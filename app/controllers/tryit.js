@@ -42,17 +42,23 @@ exports.create = function (req, res) {
       if(err) {
         doError(err, req, res);
       }
-    });
 
-    var dirname = filename.substring(0, filename.lastIndexOf('.'));
-    ppt2png(files.slide.path, './public/img/slides/'+dirname+'/slides', function(err) {
-      if(err){
-        doError(err, req, res);
-      }
-    });
+      var dirname = filename.substring(0, filename.lastIndexOf('.'));
+      ppt2png(files.slide.path, './public/img/slides/'+dirname+'/slides', function(err) {
+        if(err){
+          doError(err, req, res);
+        }
 
-    res.statusCode = 200;
-    res.end();
+        var data = {};
+        data.clientURL = 'http://localhost:4444/c/' + product.client_url;
+        data.controllerURL = 'http://localhost:4444/s/' + product.controller_url;
+        data.clientImg = getQRCode(data.clientURL);
+        data.controllerImg = getQRCode(data.controllerURL);
+
+        res.statusCode = 200;
+        res.end(JSON.stringify(data));
+      });
+    });
   });
 }
 

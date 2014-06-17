@@ -4,3 +4,6 @@
 [submodule "public/libs/impress.js"]
 	path = public/libs/impress.js
 	url = https://github.com/bartaz/impress.js
+[submodule "public/libs/io-2012-slides"]
+	path = public/libs/io-2012-slides
+	url = https://code.google.com/p/io-2012-slides/

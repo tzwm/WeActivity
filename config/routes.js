@@ -1,7 +1,8 @@
 var home = require('../app/controllers/home'),
     users = require('../app/controllers/users'),
     tryit = require('../app/controllers/tryit'),
-    groups = require('../app/controllers/groups');
+    groups = require('../app/controllers/groups'),
+    slides = require('../app/controllers/slides');
 
 module.exports = function(app) {
   //static pages routes
@@ -26,4 +27,8 @@ module.exports = function(app) {
   app.get('/group/new', groups.new);
   app.get('/groups', groups.getall);
   app.post('/groups', groups.create);
+
+  //slied routes
+  app.get('/c/:id', slides.client);
+  app.get('/s/:id', slides.controller);
 }

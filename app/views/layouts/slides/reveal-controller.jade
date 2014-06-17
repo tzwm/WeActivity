@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title title
+    meta(name='description', content='A framework for easily creating beautiful presentations using HTML')
+    meta(name='author', content='Hakim El Hattab')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='/libs/reveal.js/css/reveal.min.css')
+    link#theme(rel='stylesheet', href='/libs/reveal.js/css/theme/default.css')
+    link(rel='stylesheet', href='/libs/reveal.js/lib/css/zenburn.css')
+
+    script.
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    //if lt IE 9
+      script(src='lib/js/html5shiv.js')
+  body
+    .reveal
+      .slides
+        each val in directories
+          section
+            img(src=val)
+
+    script(src='/libs/reveal.js/lib/js/head.min.js')
+    script(src='/libs/reveal.js/js/reveal.min.js')
+    script.
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, 
+        transition: Reveal.getQueryHash().transition || 'default', 
+        dependencies: [
+          { src: '/libs/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/libs/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '/libs/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '/libs/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '/libs/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '/libs/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ],
+        minScale: 1.0,
+        maxScale: 1.0
+      });
+
+    include ../../includes/slides/reveal-controller

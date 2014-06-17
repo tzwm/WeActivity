@@ -1,0 +1,8 @@
+script(src="/socket-io/socket-io.js")
+
+script.
+  var socket = io('http://localhost:4444');
+
+  Reveal.addEventListener('slidechanged', function(event) {
+    socket.emit('changeTo', {indexh: event.indexh, indexv: event.indexv});
+  });

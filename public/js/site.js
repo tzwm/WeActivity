@@ -31,7 +31,11 @@
             .removeClass('progress-bar-success').
             text('Uploading');
         },
-        success: function () {
+        success: function (data) {
+          // temp for testing
+          $('#step-controlling-page .content .thumbnail img').attr('src', data.controllerImg);
+          $('#step-share .content img').attr('src', data.clientImg);
+
           $progressBar.addClass('progress-bar-success').text('Upload successfully!');
           $stepControl.removeClass('hidden');
           setTimeout(function () {
