@@ -26,6 +26,7 @@
     "mocha": "*",
     "chai": "*",
     "superagent": "*",
-    "mongoose-auto-increment": "*"
+    "mongoose-auto-increment": "*",
+    "basen": "*"
   }
 }

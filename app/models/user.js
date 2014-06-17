@@ -7,11 +7,11 @@ var Schema = mongoose.Schema;
 
 var VAILD_EMAIL_REGEX = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 var UserSchema = new Schema({
-  username : { type: String, required: true,
+  username: { type: String, required: true,
                index: { unique: true } },
-  hashed_password : { type: String, required: true},
-  salt : { type: String, require: true },
-  email    : { type: String, required: true, 
+  hashed_password: { type: String, required: true},
+  salt: { type: String, require: true },
+  email: { type: String, required: true, 
                match: VAILD_EMAIL_REGEX,
                index: { unique: true } },
   create_at: { type: Date, default: Date.now }

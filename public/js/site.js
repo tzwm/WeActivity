@@ -45,38 +45,51 @@
 
     });
 
-  $btnUpload.on('click', function () {
-    $mask.removeClass('hidden');
-    $progressBar
-      .removeClass('progress-bar-danger')
-      .removeClass('progress-bar-success').
-      text('Uploading');
-
-    $.ajax({
-      url: '/url/to/upload',
-      type: 'POST',
-      contentType: false,
-      processData: false,
-      data: formData,
-      success: function () {
-        $progressBar.addClass('progress-bar-success').text('Upload successfully!');
-        $stepControl.removeClass('hidden');
-        setTimeout(function () {
-          $mask.addClass('hidden');
-        }, 1000);
-        setTimeout(function () {
-          $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
-        }, 500);
-      },
-      error: function () {
-        $dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
-        $progressBar.addClass('progress-bar-danger').text('Upload failed');
-        setTimeout(function () {
-          $mask.addClass('hidden');
-        }, 1000);
-      }
-    });
+  $('#input-select-file').fileupload({
+    dataType: 'json',
+    done: function(e, data) {
+      $progressBar.addClass('progress-bar-success').text('Upload successfully!');
+      $stepControl.removeClass('hidden');
+      setTimeout(function () {
+        $mask.addClass('hidden');
+      }, 1000);
+      setTimeout(function () {
+        $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
+      }, 500);
+    }
   });
+/*  $btnUpload.on('click', function () {*/
+    //$mask.removeClass('hidden');
+    //$progressBar
+      //.removeClass('progress-bar-danger')
+      //.removeClass('progress-bar-success').
+      //text('Uploading');
+
+    //$.ajax({
+      //url: '/tryit/new',
+      //type: 'POST',
+      //contentType: false,
+      //processData: false,
+      //data: formData,
+      //success: function () {
+        //$progressBar.addClass('progress-bar-success').text('Upload successfully!');
+        //$stepControl.removeClass('hidden');
+        //setTimeout(function () {
+          //$mask.addClass('hidden');
+        //}, 1000);
+        //setTimeout(function () {
+          //$('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
+        //}, 500);
+      //},
+      //error: function () {
+        //$dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
+        //$progressBar.addClass('progress-bar-danger').text('Upload failed');
+        //setTimeout(function () {
+          //$mask.addClass('hidden');
+        //}, 1000);
+      //}
+    //});
+  /*});*/
 
   $btnControl.on('click', function () {
     $stepShare.removeClass('hidden');
