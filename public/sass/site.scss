@@ -81,8 +81,7 @@ $slider-small-height: 400px;
   }
 }
 
-@import "list";
-@import "activity_item";
+@import "activity_list";
 .search-container {
   overflow: auto;
 }

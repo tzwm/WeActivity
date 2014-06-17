@@ -27,7 +27,8 @@
     filename = filename.substring(filename.lastIndexOf('\\') + 1);
     $dropZoneMessage.html(filename);
 
-    formData = new FormData($inputFile[0]);
+    formData = new FormData();
+    formData.append('slide', $inputFile[0].files[0]);
   });
 
   $dropzone
@@ -41,55 +42,46 @@
 
       var file = e.originalEvent.dataTransfer.files[0];
       $dropZoneMessage.html(file.name);
-      formData = new FormData(file);
+      formData = new FormData();
 
+      formData.append('slide', file);
+      console.log(file);
     });
 
-  $('#input-select-file').fileupload({
-    dataType: 'json',
-    done: function(e, data) {
-      $progressBar.addClass('progress-bar-success').text('Upload successfully!');
-      $stepControl.removeClass('hidden');
-      setTimeout(function () {
-        $mask.addClass('hidden');
-      }, 1000);
-      setTimeout(function () {
-        $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
-      }, 500);
-    }
+  $btnUpload.on('click', function () {
+    $mask.removeClass('hidden');
+    $progressBar
+      .removeClass('progress-bar-danger')
+      .removeClass('progress-bar-success').
+      text('Uploading');
+    console.log(formData);
+    $.ajax({
+      url: '/tryit/new',
+      type: 'POST',
+      contentType: false,
+      processData: false,
+      dataType: 'json',
+      data: formData,
+      enctype: 'multipart/form-data',
+      success: function () {
+        $progressBar.addClass('progress-bar-success').text('Upload successfully!');
+        $stepControl.removeClass('hidden');
+        setTimeout(function () {
+          $mask.addClass('hidden');
+        }, 1000);
+        setTimeout(function () {
+          $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
+        }, 500);
+      },
+      error: function () {
+        $dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
+        $progressBar.addClass('progress-bar-danger').text('Upload failed');
+        setTimeout(function () {
+          $mask.addClass('hidden');
+        }, 1000);
+      }
+    });
   });
-/*  $btnUpload.on('click', function () {*/
-    //$mask.removeClass('hidden');
-    //$progressBar
-      //.removeClass('progress-bar-danger')
-      //.removeClass('progress-bar-success').
-      //text('Uploading');
-
-    //$.ajax({
-      //url: '/tryit/new',
-      //type: 'POST',
-      //contentType: false,
-      //processData: false,
-      //data: formData,
-      //success: function () {
-        //$progressBar.addClass('progress-bar-success').text('Upload successfully!');
-        //$stepControl.removeClass('hidden');
-        //setTimeout(function () {
-          //$mask.addClass('hidden');
-        //}, 1000);
-        //setTimeout(function () {
-          //$('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
-        //}, 500);
-      //},
-      //error: function () {
-        //$dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
-        //$progressBar.addClass('progress-bar-danger').text('Upload failed');
-        //setTimeout(function () {
-          //$mask.addClass('hidden');
-        //}, 1000);
-      //}
-    //});
-  /*});*/
 
   $btnControl.on('click', function () {
     $stepShare.removeClass('hidden');

@@ -3,6 +3,15 @@
  */
 @import "compass/css3";
 
+.activity-list {
+  width: 100%;
+
+  .activity-list-item {
+    width: 33.333%;
+    float: left;
+  }
+}
+
 $photo-width: 60px;
 $time-card-width: 80px;
 $padding-10: 10px;
