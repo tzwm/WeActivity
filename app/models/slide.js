@@ -5,8 +5,12 @@ var Schema = mongoose.Schema;
 
 var SlideSchema = new Schema({
   oldname: { type: String, required: true },
-  filename: { type: String, required: true,
-               index: { unique: true } },
+  filename: {
+    type: String,
+    required: true,
+    index: {
+      unique: true
+    }},
   page_count: { type: Number },
   controller_url: { type: String },
   client_url: { type: String },
@@ -15,22 +19,22 @@ var SlideSchema = new Schema({
 });
 
 
-var makeShortStr = function() {
+var makeShortStr = function () {
   var basen = new BaseN();
-  var tmp = new Date().valueOf()*Math.random()*4444;
+  var tmp = new Date().valueOf() * Math.random() * 4444;
   tmp = tmp % basen.decode('ZZZZ');
   tmp = tmp + '';
   tmp = basen.encode(tmp);
-  while(tmp.length < 4)
-    tmp = '0' + tmp; 
+  while (tmp.length < 4)
+    tmp = '0' + tmp;
 
   return tmp;
-}
+};
 
 
-SlideSchema.pre('save', function(next) {
+SlideSchema.pre('save', function (next) {
   // need check repeat in db
-  this.controller_url = makeShortStr(); 
+  this.controller_url = makeShortStr();
   this.client_url = makeShortStr();
 
   next();
