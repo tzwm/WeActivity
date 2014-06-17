@@ -1,9 +1,22 @@
 var formidable = require('formidable'),
   mongoose = require('mongoose'),
-  Slide = mongoose.model('Slide');
+  Slide = mongoose.model('Slide'),
+  ppt2png = require('ppt2png');
 
 exports.show = function(req, res) {
   res.render('home/tryit');
+}
+
+
+function getQRCode(data) {
+  var API = 'https://api.qrserver.com/v1/create-qr-code/?size=320x320&data='
+
+  return API+data;
+}
+
+function doError(err, req, res) {
+  console.log(err);
+  req.flash('error', 'upload error');
 }
 
 exports.create = function(req, res) {
@@ -18,20 +31,25 @@ exports.create = function(req, res) {
       return;
     }
 
-    var uploadSuccess = true;
     var slide = new Slide();
     slide.oldname = files.slide.name;
     var filename = files.slide.path;
     filename = filename.substring(filename.lastIndexOf('/')+1, filename.length);
     slide.filename = filename;
-    slide.save(function(err) {
+    slide.is_tmp = true;
+    slide.save(function(err, product) {
       if(err) {
-        console.log(err);
-        uploadSuccess = false;
-        return;
+        doError(err, req, res);
       }
     });
 
-    req.flash('success', 'upload successful');
+    var dirname = filename.substring(0, filename.lastIndexOf('.'));
+    ppt2png(files.slide.path, './public/img/slides/'+dirname+'/slides', function(err) {
+      if(err){
+        doError(err, req, res);
+      }
+    });
+
   });
 }
+

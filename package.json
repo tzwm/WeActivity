@@ -22,6 +22,7 @@
     "ppt2png": "*",
     "formidable": "*",
     "socket.io": "*",
+    "request": "*",
     "winston": "~0.7.3",
     "mocha": "*",
     "chai": "*",
