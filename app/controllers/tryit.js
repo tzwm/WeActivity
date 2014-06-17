@@ -50,6 +50,9 @@ exports.create = function (req, res) {
         doError(err, req, res);
       }
     });
+
+    res.statusCode = 200;
+    res.end();
   });
 }
 
