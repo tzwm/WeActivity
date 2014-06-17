@@ -8,14 +8,48 @@
     $dropzone = $('#dropzone'),
     $dropZoneMessage = $dropzone.find('span'),
     $btnSelectFile = $('#btn-select-file'),
-    $btnUpload = $('#btn-upload'),
     $btnControl = $('#btn-control'),
     $inputFile = $('#input-select-file'),
     $mask = $('#mask'),
     $progressBar = $mask.find('.progress-bar'),
     $stepControl = $('#step-controlling-page'),
     $stepShare = $('#step-share'),
-    formData = null;
+    formData = null,
+    handleUpload = function(formData) {
+      $.ajax({
+        url: '/tryit/new',
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        data: formData,
+        enctype: 'multipart/form-data',
+        beforeSend: function() {
+          $mask.removeClass('hidden');
+          $progressBar
+            .removeClass('progress-bar-danger')
+            .removeClass('progress-bar-success').
+            text('Uploading');
+        },
+        success: function () {
+          $progressBar.addClass('progress-bar-success').text('Upload successfully!');
+          $stepControl.removeClass('hidden');
+          setTimeout(function () {
+            $mask.addClass('hidden');
+          }, 1000);
+          setTimeout(function () {
+            $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
+          }, 500);
+        },
+        error: function () {
+          $dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
+          $progressBar.addClass('progress-bar-danger').text('Upload failed');
+          setTimeout(function () {
+            $mask.addClass('hidden');
+          }, 1000);
+        }
+      });
+    };
 
   $btnSelectFile.on('click', function () {
     $inputFile.click();
@@ -29,6 +63,7 @@
 
     formData = new FormData();
     formData.append('slide', $inputFile[0].files[0]);
+    handleUpload(formData);
   });
 
   $dropzone
@@ -42,46 +77,11 @@
 
       var file = e.originalEvent.dataTransfer.files[0];
       $dropZoneMessage.html(file.name);
+
       formData = new FormData();
-
       formData.append('slide', file);
-      console.log(file);
+      handleUpload(formData);
     });
-
-  $btnUpload.on('click', function () {
-    $mask.removeClass('hidden');
-    $progressBar
-      .removeClass('progress-bar-danger')
-      .removeClass('progress-bar-success').
-      text('Uploading');
-    console.log(formData);
-    $.ajax({
-      url: '/tryit/new',
-      type: 'POST',
-      contentType: false,
-      processData: false,
-      dataType: 'json',
-      data: formData,
-      enctype: 'multipart/form-data',
-      success: function () {
-        $progressBar.addClass('progress-bar-success').text('Upload successfully!');
-        $stepControl.removeClass('hidden');
-        setTimeout(function () {
-          $mask.addClass('hidden');
-        }, 1000);
-        setTimeout(function () {
-          $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
-        }, 500);
-      },
-      error: function () {
-        $dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
-        $progressBar.addClass('progress-bar-danger').text('Upload failed');
-        setTimeout(function () {
-          $mask.addClass('hidden');
-        }, 1000);
-      }
-    });
-  });
 
   $btnControl.on('click', function () {
     $stepShare.removeClass('hidden');
