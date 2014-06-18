@@ -19,7 +19,6 @@
     "connect-mongo": "~0.4.1",
     "connect-flash": "~0.1.1",
     "mongoose": "~3.9.0",
-    "ppt2png": "*",
     "formidable": "*",
     "socket.io": "*",
     "request": "*",
