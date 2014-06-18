@@ -45,6 +45,7 @@ server.listen(port);
 
 app.locals.port = port;
 app.locals.domain = config.domain + ':' + config.port;
+app.locals.title = config.app.name;
 
 
 console.log('Express app started on port '+port);
