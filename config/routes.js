@@ -31,4 +31,7 @@ module.exports = function(app) {
   //slied routes
   app.get('/c/:id', slides.client);
   app.get('/s/:id', slides.controller);
-}
+
+  // for test
+  app.get('/test', home.test);
+};

@@ -624,6 +624,52 @@ a:hover {
 }
 
 /**
+ * Created by van on 14-6-19.
+ */
+/* line 5, ../sass/_activity.scss */
+.activity {
+  margin-top: 15px;
+}
+/* line 8, ../sass/_activity.scss */
+.activity .activity-info-list {
+  padding-left: 60px;
+  color: #999;
+  font-size: 15px;
+  line-height: 30px;
+}
+/* line 13, ../sass/_activity.scss */
+.activity .activity-info-list .activity-info {
+  word-break: break-all;
+}
+/* line 16, ../sass/_activity.scss */
+.activity .activity-info-list .activity-info + .activity-info {
+  border-top: 1px solid #e0e0e0;
+}
+/* line 20, ../sass/_activity.scss */
+.activity .activity-info-list .activity-info .info-label {
+  padding-right: 10px;
+  text-align: right;
+  width: 200px;
+}
+/* line 25, ../sass/_activity.scss */
+.activity .activity-info-list .activity-info .info-label:after {
+  content: ':';
+}
+/* line 30, ../sass/_activity.scss */
+.activity .activity-info-list .activity-info a.btn {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+/* line 37, ../sass/_activity.scss */
+.activity .activity-img {
+  width: 80%;
+}
+/* line 40, ../sass/_activity.scss */
+.activity .activity-img img {
+  width: 80%;
+}
+
+/**
  * Created by van on 14-4-21.
  */
 /* line 5, ../sass/_steps.scss */
@@ -761,4 +807,13 @@ a:hover {
   font-size: 25px;
   color: #777;
   border-bottom: 1px solid #ddd;
+}
+/* line 30, ../sass/_pageheader.scss */
+.page-header .breadcrumb {
+  margin: 0;
+  font-size: 15px;
+}
+/* line 34, ../sass/_pageheader.scss */
+.page-header .breadcrumb .active {
+  color: #bfbfbf;
 }

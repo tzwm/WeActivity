@@ -1,0 +1,44 @@
+/**
+ * Created by van on 14-6-19.
+ */
+
+.activity {
+  margin-top: 15px;
+
+  .activity-info-list {
+    padding-left:60px;
+    color: #999;
+    font-size: 15px;
+    line-height: 30px;
+    .activity-info {
+      word-break: break-all;
+
+      + .activity-info {
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .info-label {
+        padding-right: 10px;
+        text-align: right;
+        width: 200px;
+
+        &:after {
+          content: ':';
+        }
+      }
+
+      a.btn {
+        margin-top: 10px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .activity-img {
+    width: 80%;
+
+    img {
+      width: 80%;
+    }
+  }
+}

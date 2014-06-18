@@ -4,3 +4,41 @@
 extends ../layouts/default
 block main
   #content.container
+    .page-header
+      ol.breadcrumb
+        li
+          a(href='#') All
+        li.active
+          | activityname
+
+    .container.activity
+      .col-md-5
+        ul.activity-info-list
+          li.activity-info
+            span.info-label Name
+            span.info-value testname
+          li.activity-info
+            span.info-label Speakers
+            span.info-value aa, aa
+          li.activity-info
+            span.info-label Start time
+            span.info-value 2014-01-07 00:00
+          li.activity-info
+            span.info-label End time
+            span.info-value 2014-6-25 00:00
+          li.activity-info
+            span.info-label Publisher
+            span.info-value publisher
+          li.activity-info
+            span.info-label Under way
+            span.info-value Yes
+          li.activity-info
+            span.info-label Description
+            span.info-value blahblahblahblahblahblahblahblahblahblahblahblah
+          li.activity-info
+            a.btn.btn-default Join
+            a.btn.btn-warning Control
+      .col-md-7
+        .activity-img
+          img.thumbnail(src='/img/Jumbotron.jpg')
+

@@ -26,4 +26,13 @@
   font-size: 25px;
   color: #777;
   border-bottom: 1px solid #ddd;
+
+  .breadcrumb {
+    margin: 0;
+    font-size: 15px;
+
+    .active {
+      color: #bfbfbf;
+    }
+  }
 }
