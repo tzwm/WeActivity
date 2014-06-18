@@ -19,8 +19,8 @@ $footer-height: 100px;
 
 // footer
 .footer {
-  background: #6f6f6f;
-  color: #ffffff;
+  background: #ffffff;
+  color: #444;
   padding-top: 20px;
   height: $footer-height;
   margin-top: -$footer-height;
@@ -33,6 +33,10 @@ $footer-height: 100px;
   .links {
     ul > li {
       @include inline-block;
+
+      + li {
+        padding-left: 10px;
+      }
     }
   }
 

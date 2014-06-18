@@ -115,3 +115,12 @@
     }
   }
 }
+
+.navbar {
+  font-size: 15px;
+}
+
+// override bootstrap
+.navbar-inverse {
+  background-color: rgba(47,47,47,0.98);
+}

@@ -87,8 +87,13 @@ div, ul, li {
   display: block;
 }
 
-/* line 20, ../sass/_preset.scss */
+/* line 19, ../sass/_preset.scss */
+a {
+  color: #999;
+}
+/* line 22, ../sass/_preset.scss */
 a:hover {
+  color: #777;
   text-decoration: none;
 }
 
@@ -209,6 +214,16 @@ a:hover {
     color: #666;
   }
 }
+/* line 119, ../sass/_navbar.scss */
+.navbar {
+  font-size: 15px;
+}
+
+/* line 124, ../sass/_navbar.scss */
+.navbar-inverse {
+  background-color: rgba(47, 47, 47, 0.98);
+}
+
 /* wrap */
 /* line 9, ../sass/_layout.scss */
 #wrap {
@@ -224,8 +239,8 @@ a:hover {
 
 /* line 21, ../sass/_layout.scss */
 .footer {
-  background: #6f6f6f;
-  color: #ffffff;
+  background: #ffffff;
+  color: #444;
   padding-top: 20px;
   height: 100px;
   margin-top: -100px;
@@ -244,7 +259,11 @@ a:hover {
   zoom: 1;
   *display: inline;
 }
-/* line 39, ../sass/_layout.scss */
+/* line 37, ../sass/_layout.scss */
+.footer .links ul > li + li {
+  padding-left: 10px;
+}
+/* line 43, ../sass/_layout.scss */
 .footer .copyright {
   padding-top: 10px;
 }
@@ -538,29 +557,33 @@ a:hover {
 /**
  * Created by van on 14-4-20.
  */
-/* line 8, ../sass/_activity_list.scss */
+/* line 6, ../sass/_activity_list.scss */
+.activity-list {
+  margin-top: 10px;
+}
+/* line 9, ../sass/_activity_list.scss */
 .activity-list .list-item {
-  width: 33.333%;
+  width: 25%;
   float: left;
   padding: 5px 10px;
 }
-/* line 13, ../sass/_activity_list.scss */
+/* line 14, ../sass/_activity_list.scss */
 .activity-list .list-item .activity {
   background: #ffffff;
   padding: 10px;
 }
-/* line 17, ../sass/_activity_list.scss */
+/* line 18, ../sass/_activity_list.scss */
 .activity-list .list-item .activity .shot {
   position: relative;
   display: block;
 }
-/* line 21, ../sass/_activity_list.scss */
+/* line 22, ../sass/_activity_list.scss */
 .activity-list .list-item .activity .shot .photo {
   width: 100%;
   padding: 0;
   margin-bottom: 0;
 }
-/* line 27, ../sass/_activity_list.scss */
+/* line 28, ../sass/_activity_list.scss */
 .activity-list .list-item .activity .shot .item-description {
   position: absolute;
   top: 0;
@@ -574,16 +597,16 @@ a:hover {
   opacity: 0;
   z-index: 1;
 }
-/* line 40, ../sass/_activity_list.scss */
+/* line 41, ../sass/_activity_list.scss */
 .activity-list .list-item .activity .shot .item-description:hover {
   cursor: pointer;
 }
-/* line 44, ../sass/_activity_list.scss */
+/* line 45, ../sass/_activity_list.scss */
 .activity-list .list-item .activity .shot .item-description .item-title {
   padding: 10px 0;
-  font-size: 25px;
+  font-size: 20px;
 }
-/* line 60, ../sass/_activity_list.scss */
+/* line 61, ../sass/_activity_list.scss */
 .activity-list .list-item .item-footer {
   padding: 5px 10px;
 }
@@ -714,4 +737,16 @@ a:hover {
 /* line 120, ../sass/_steps.scss */
 .steps-panel .steps .step .mask .message {
   top: 45%;
+}
+
+/**
+ * Created by van on 14-6-19.
+ */
+/* line 23, ../sass/_pageheader.scss */
+.page-header {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 25px;
+  color: #777;
+  border-bottom: 1px solid #ddd;
 }
