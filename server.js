@@ -49,6 +49,7 @@ app.locals.domain = config.domain + ':' + config.port;
 
 console.log('Express app started on port '+port);
 
+// temp for socket.io
 io.on('connection', function(socket) {
   socket.on('changeTo', function(data) {
     io.sockets.emit('goto', 
