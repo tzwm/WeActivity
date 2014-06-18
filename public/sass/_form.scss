@@ -109,3 +109,11 @@
     }
   }
 }
+
+.form-group {
+  .btn {
+    + .btn {
+      margin-left: 10px;
+    }
+  }
+}

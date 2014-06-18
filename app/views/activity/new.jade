@@ -1,0 +1,43 @@
+//
+   Created by van on 14-6-19.
+
+// need add button to toggle the modal
+#modal-post-activity.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalPostActivity', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+        h4#modelLabel.modal-title Publish activty
+      .modal-body
+        form.form-horizontal(action='/activities', method='POST')
+          .form-group
+            label.col-sm-2.control-label(for='inputEmail3') Name
+            .col-sm-10
+              input#inputName.form-control(type='text', placeholder='Name', name='name')
+          .form-group
+            label.col-sm-2.control-label(for='inputIntro') Introduction
+            .col-sm-10
+              textarea#inputIntro.form-control(type='text', placeholder='Introduction', name='introduction')
+          .form-group
+            label.col-sm-2.control-label(for='inputStartTime') Start time
+            .col-sm-10
+              input#inputStartTime.form-control(type='datetime', name='startTime', data-date-format="yyyy-mm-dd hh:ii")
+          .form-group
+            label.col-sm-2.control-label(for='inputEndTime') End time
+            .col-sm-10
+              input#inputEndTime.form-control(type='datetime', name='endTime', data-date-format="yyyy-mm-dd hh:ii")
+          .form-group
+            label.col-sm-2.control-label(for='inputSpeakers') Speakers
+            .col-sm-10
+              input#inputSpeakers.form-control(type='text', placeholder='Speakers', name='speakers')
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              .checkbox
+                label
+                  input(type='checkbox', name='isUnderWay')
+                  | Under way
+
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-default(type='submit') Post
+              button.btn.btn-info(type='button', data-dismiss='modal') Close

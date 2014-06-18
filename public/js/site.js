@@ -208,3 +208,9 @@
       }, 200);
     });
 }());
+
+// for activity new
+(function () {
+  $('#inputStartTime').datetimepicker();
+  $('#inputEndTime').datetimepicker();
+}());
