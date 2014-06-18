@@ -4,9 +4,10 @@
 @import "compass/css3";
 
 .activity-list {
+  margin-top: 10px;
 
   .list-item {
-    width: 33.333%;
+    width: 25%;
     float: left;
     padding: 5px 10px;
 
@@ -43,7 +44,7 @@
 
           .item-title {
             padding: 10px 0;
-            font-size: 25px;
+            font-size: 20px;
           }
 
           .item-content {

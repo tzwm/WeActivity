@@ -17,7 +17,10 @@ div, ul, li {
 }
 
 a {
+  color: #999;
+
   &:hover {
+    color: #777;
     text-decoration: none;
   }
 }
