@@ -1,4 +1,6 @@
 var
+  env = process.env.NODE_ENV || 'development',
+  config = require('../../config/config')[env],
   formidable = require('formidable'),
   mongoose = require('mongoose'),
   Slide = mongoose.model('Slide'),
@@ -18,6 +20,8 @@ function getQRCode(data) {
 function doError(err, req, res) {
   console.log(err);
   req.flash('error', 'upload error');
+  res.statusCode = 500;
+  res.end();
 }
 
 exports.create = function (req, res) {
@@ -28,7 +32,7 @@ exports.create = function (req, res) {
 
   form.parse(req, function (err, fields, files) {
     if (err) {
-      console.log(err);
+      doError(err, req, res);
       return;
     };
 
@@ -49,9 +53,10 @@ exports.create = function (req, res) {
           doError(err, req, res);
         }
 
+        var domain = 'http://' + config.domain + ':' + config.port;
         var data = {};
-        data.clientURL = 'http://localhost:4444/c/' + product.client_url;
-        data.controllerURL = 'http://localhost:4444/s/' + product.controller_url;
+        data.clientURL = domain + '/c/' + product.client_url;
+        data.controllerURL = domain + '/s/' + product.controller_url;
         data.clientImg = getQRCode(data.clientURL);
         data.controllerImg = getQRCode(data.controllerURL);
 
