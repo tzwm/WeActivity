@@ -4,69 +4,61 @@
 @import "compass/css3";
 
 .activity-list {
-  width: 100%;
 
-  .activity-list-item {
+  .list-item {
     width: 33.333%;
     float: left;
-  }
-}
+    padding: 5px 10px;
 
-$photo-width: 60px;
-$time-card-width: 80px;
-$padding-10: 10px;
+    .activity {
+      background: #ffffff;
+      padding: 10px;
 
-.activity-item {
-  padding: 10px;
-  margin: 0 5px 5px 5px;
-  background: #ffffff;
+      .shot {
+        position: relative;
+        display: block;
 
-  &:hover {
-    cursor: pointer;
-    background: #eeeeee;
-  }
+        .photo {
+          width: 100%;
+          padding: 0;
+          margin-bottom: 0;
+        }
 
-  .content {
-    margin-left: $photo-width + $padding-10;
-    margin-right: $time-card-width;
-    .header {
-      .title {
+        .item-description {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.8);
+          word-break: break-all;
+          color: #888;
+          opacity: 0;
+          z-index: 1;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .item-title {
+            padding: 10px 0;
+            font-size: 25px;
+          }
+
+          .item-content {
+
+          }
+        }
       }
 
-      .photo {
-        float: left;
-        max-width: $photo-width;
-        max-height: $photo-width;
-        margin-left: -$photo-width - $padding-10;
-      }
-    }
+      .toolbar {
 
-    .description {
-      word-wrap: break-word;
+      }
     }
 
     .item-footer {
-      padding-top: $padding-10;
-      ul {
-        li {
-          @include inline-block();
-        }
-      }
-    }
-  }
-
-  .time-card {
-    float: right;
-    width: $time-card-width;
-    padding: $padding-10;
-    font-size: 12px;
-
-    .date {
-
-    }
-
-    .time {
-
+      padding: 5px 10px;
     }
   }
 }

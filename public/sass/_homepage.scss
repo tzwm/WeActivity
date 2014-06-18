@@ -1,0 +1,54 @@
+/**
+ * Created by van on 14-6-18.
+ */
+
+.background {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  padding-top: 92px;
+  > .container {
+    height: 100%;
+  }
+}
+
+.introduction {
+  float: left;
+  padding-top: 150px;
+  color: #ffffff;
+  text-align: center;
+  word-break: normal;
+
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    line-height: 45px;
+    font-size: 30px;
+  }
+
+  .btn-get-start {
+    margin-top: 10px;
+    padding: 7px 12px;
+    font-size: 13px;
+    color: #000;
+    background: #ffffff;
+    border-radius: 25px;
+    border: none;
+
+    &:hover {
+      box-shadow: 0 0 1em #e3e3e3;
+    }
+  }
+}
+
+.intro-photo {
+  float: left;
+  margin-top: 80px;
+  img {
+    width: 100%;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 0 1em #e3e3e3;
+  }
+}

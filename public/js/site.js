@@ -5,6 +5,7 @@
 // for slides
 (function () {
   var
+    $btnGetStart = $('#btn-get-start'),
     $dropzone = $('#dropzone'),
     $dropZoneMessage = $dropzone.find('span'),
     $btnSelectFile = $('#btn-select-file'),
@@ -12,10 +13,14 @@
     $inputFile = $('#input-select-file'),
     $mask = $('#mask'),
     $progressBar = $mask.find('.progress-bar'),
+    $stepsPanel = $('#steps-panel'),
+    $steps = $stepsPanel.find('.steps'),
+    $stepBack = $steps.find('.headbar > span'),
+    $stepUpload = $('#step-upload'),
     $stepControl = $('#step-controlling-page'),
     $stepShare = $('#step-share'),
     formData = null,
-    handleUpload = function(formData) {
+    handleUpload = function (formData) {
       $.ajax({
         url: '/tryit/new',
         type: 'POST',
@@ -24,7 +29,7 @@
         dataType: 'json',
         data: formData,
         enctype: 'multipart/form-data',
-        beforeSend: function() {
+        beforeSend: function () {
           $mask.removeClass('hidden');
           $progressBar
             .removeClass('progress-bar-danger')
@@ -32,20 +37,30 @@
             text('Uploading');
         },
         success: function (data) {
-          // temp for testing
-          $('#step-controlling-page .content .thumbnail img').attr('src', data.controllerImg);
-          $('#btn-control').attr('src', data.controllerURL);
-          $('#step-share .content img').attr('src', data.clientImg);
-          $('#step-share .content img .share-link a').attr('src', data.clientURL);
-          $('#step-share .content img .share-link a').text(data.clientURL);
+          // change the
+          $btnControl.attr('href', data.controllerURL);
+          $stepControl.find('img').attr('src', data.controllerImg);
+          $stepShare.find('img').attr('src', data.clientImg);
+          $stepShare.find('.share-link > a').attr('href', data.clientURL).text(data.clientURL);
 
           $progressBar.addClass('progress-bar-success').text('Upload successfully!');
-          $stepControl.removeClass('hidden');
+
           setTimeout(function () {
             $mask.addClass('hidden');
           }, 1000);
           setTimeout(function () {
-            $('body').animate({ scrollTop: $stepControl.offset().top }, 1000);
+            $steps.animate({
+              top: -$stepUpload.height()
+            }, 1000);
+            $stepUpload.animate({
+              opacity: 0
+            }, 1000);
+            $stepControl
+              .removeClass('hidden')
+              .css({opacity: 0})
+              .animate({
+                opacity: 1
+              }, 1000);
           }, 500);
         },
         error: function () {
@@ -58,16 +73,21 @@
       });
     };
 
+  $btnGetStart.on('click', function () {
+    $stepsPanel.removeClass('hidden');
+    $stepUpload
+      .removeClass('hidden')
+      .css({opacity: 0})
+      .animate({
+        opacity: 1
+      }, 500);
+  });
+
+  // for upload
   $btnSelectFile.on('click', function () {
     $inputFile.click();
   });
-
   $inputFile.on('change', function () {
-    var filename = $(this).val();
-    // need to check file extension
-    filename = filename.substring(filename.lastIndexOf('\\') + 1);
-    $dropZoneMessage.html(filename);
-
     formData = new FormData();
     formData.append('slide', $inputFile[0].files[0]);
     handleUpload(formData);
@@ -82,16 +102,50 @@
       e.preventDefault();
       e.stopPropagation();
 
-      var file = e.originalEvent.dataTransfer.files[0];
-      $dropZoneMessage.html(file.name);
-
       formData = new FormData();
       formData.append('slide', file);
       handleUpload(formData);
     });
 
   $btnControl.on('click', function () {
-    $stepShare.removeClass('hidden');
-    $('body').animate({ scrollTop: $stepShare.offset().top }, 1000);
+    console.log($steps.css('top') + '  ' + $stepControl.height());
+    $steps.animate({
+      top: -$stepControl.height() + $steps.position().top
+    }, 1000);
+    $stepControl.animate({
+      opacity: 0
+    }, 1000);
+    $stepShare
+      .removeClass('hidden')
+      .css({opacity: 0})
+      .animate({
+        opacity: 1
+      }, 1000);
   });
+
+  $stepBack.on('click', function() {
+    $stepsPanel.addClass('hidden');
+    $steps.css({
+      top: 0
+    });
+    $stepControl.addClass('hidden');
+    $stepShare.addClass('hidden');
+  });
+}());
+
+// for activity list
+(function () {
+  var $activityList = $('#activity-list');
+  $activityList
+    .find('.shot')
+    .on('mouseover', '.item-description', function () {
+      $(this).stop().animate({
+        opacity: 1
+      }, 200);
+    })
+    .on('mouseleave', '.item-description', function () {
+      $(this).stop().animate({
+        opacity: 0
+      }, 200);
+    });
 }());

@@ -1,0 +1,35 @@
+/**
+ * Created by van on 14-6-18.
+ */
+
+.pagination {
+  display: block;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    margin: 0 10px;
+  }
+
+  .btn-prev {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background: url("../img/prev.png");
+
+    &:hover {
+      background-position: 0 44px;
+    }
+  }
+
+  .btn-next {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background: url("../img/next.png");
+
+    &:hover {
+      background-position: 0 44px;
+    }
+  }
+}

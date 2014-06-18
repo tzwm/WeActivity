@@ -15,3 +15,9 @@ div, ul, li {
   position: relative;
   display: block;
 }
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -81,13 +81,10 @@ $slider-small-height: 400px;
   }
 }
 
-@import "activity_list";
-.search-container {
-  overflow: auto;
-}
+@import "pagination";
 
-.pages {
-  text-align: center;
-}
+@import "homepage";
+
+@import "activity_list";
 
 @import "steps";
