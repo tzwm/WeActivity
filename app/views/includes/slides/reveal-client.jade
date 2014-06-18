@@ -1,7 +1,7 @@
-script(src="/socket-io/socket-io.js")
+script(src="/socket.io/socket.io.js")
 
 script.
-  var socket = io('http://localhost:4444');
+  var socket = io('#{domain}');
 
   socket.on('goto', function(data) {
     Reveal.slide(data.indexh, data.indexv);

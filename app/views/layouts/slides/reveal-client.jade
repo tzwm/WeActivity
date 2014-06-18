@@ -38,7 +38,7 @@ head
         history: true,
         center: true,
         theme: Reveal.getQueryHash().theme, 
-        transition: Reveal.getQueryHash().transition || 'default', 
+        transition: Reveal.getQueryHash().transition || 'concave', 
         dependencies: [
           { src: '/libs/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '/libs/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -47,8 +47,6 @@ head
           { src: '/libs/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
           { src: '/libs/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ],
-        minScale: 1.0,
-        maxScale: 1.0
       });
 
-    include ../../includes/slides/reveal-controller
+    include ../../includes/slides/reveal-client

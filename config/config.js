@@ -9,7 +9,8 @@ module.exports = {
     app: {
       name: 'WeActivity'
     },
-    port: 4444 
+    domain: '192.168.1.233',
+    port: 2333
   },
   production: {}
 };

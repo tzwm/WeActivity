@@ -29,7 +29,8 @@ function render(req, res, side) {
         data[i] = "/img/slides/"+filename+"/"+data[i];
       }
       data.sort(compare);
-      res.render('layouts/slides/reveal-'+side, {directories: data});
+      res.render('layouts/slides/reveal-'+side,
+                 { directories: data });
     });
 }
 

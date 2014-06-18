@@ -1,4 +1,6 @@
-var express = require('express'),
+var app = require('express')(),
+    server = require('http').Server(app),
+    io = require('socket.io')(server),
     fs = require('fs');
     
 
@@ -33,15 +35,28 @@ fs.readdirSync(models_path).forEach(function (file) {
 
 
 
-var app = express();
 
 require('./config/express')(app, config);
 
 require('./config/routes')(app);
 
 var port = process.env.PORT || config.port;
-app.listen(port);
+server.listen(port);
+
+app.locals.port = port;
+app.locals.domain = config.domain + ':' + config.port;
+
+
 console.log('Express app started on port '+port);
+
+// temp for socket.io
+io.on('connection', function(socket) {
+  socket.on('changeTo', function(data) {
+    io.sockets.emit('goto', 
+      { indexh: data.indexh,
+        indexv: data.indexv});
+  });
+});
 
 
 exports = module.exports = app;
