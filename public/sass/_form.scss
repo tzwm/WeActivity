@@ -110,6 +110,7 @@
   }
 }
 
+// for acticity new
 .form-group {
   .btn {
     + .btn {
@@ -117,3 +118,9 @@
     }
   }
 }
+
+#labelFilename {
+  margin-left: 10px;
+  font-size: 12px;
+  word-break: break-all;
+ }

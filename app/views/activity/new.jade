@@ -31,6 +31,12 @@
             .col-sm-10
               input#inputSpeakers.form-control(type='text', placeholder='Speakers', name='speakers')
           .form-group
+            label.col-sm-2.control-label(for='inputSlides') Slides
+            .col-sm-10
+              input#inputSlides.form-control.hidden(type='file', name='slides')
+              button#btnSelectFile.btn.btn-primary(type='button') Choose File
+              span#labelFilename
+          .form-group
             .col-sm-offset-2.col-sm-10
               .checkbox
                 label
@@ -40,4 +46,4 @@
           .form-group
             .col-sm-offset-2.col-sm-10
               button.btn.btn-default(type='submit') Post
-              button.btn.btn-info(type='button', data-dismiss='modal') Close
+              button.btn.btn-danger(type='button', data-dismiss='modal') Close

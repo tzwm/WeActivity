@@ -377,9 +377,16 @@ a:hover {
   padding-right: 10px;
 }
 
-/* line 115, ../sass/_form.scss */
+/* line 116, ../sass/_form.scss */
 .form-group .btn + .btn {
   margin-left: 10px;
+}
+
+/* line 122, ../sass/_form.scss */
+#labelFilename {
+  margin-left: 10px;
+  font-size: 12px;
+  word-break: break-all;
 }
 
 /* line 15, ../sass/site.scss */
