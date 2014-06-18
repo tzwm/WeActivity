@@ -9,11 +9,6 @@ header.navbar.navbar-inverse.bs-docs-nav.navbar-fixed-top(role="banner")
       a.navbar-brand(href="/") WeActivity
 
     nav.collapse.navbar-collapse.bs-navbar-collapse.navbar-right(role="navigation")
-      form.navbar-form.navbar-left(role="search")
-        .form-group.search-only
-          i.search-icon.icon-search
-          input.form-control(type="text", placeholder="Search")
-      
       ul.nav.navbar-nav
         li
           a(href="/") Home
@@ -22,11 +17,20 @@ header.navbar.navbar-inverse.bs-docs-nav.navbar-fixed-top(role="banner")
         li
           a(href="/tryit") Try it!
         li
-          a(href="/login") Signin
-            span.caret
-          ul.dropdown-menu(role="menu")
+          a(href="/login") Sign In
+        li
+          a(href="/login") Sign Up
+        // after sign in
+        li
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            | MyUsername
+            b.caret
+          ul.dropdown-menu
             li
-              a(href="/signup") Sign Up!
+              a(href='#') Profile
+            li.divider
             li
-              a(href="#") Another action
+              a(href='#') Logout
+
+
 

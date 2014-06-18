@@ -3,22 +3,22 @@ extends ../layouts/default
 block main
   #content.container
     .form-container
-        .header
-          .title
-            | Sign up
-        .content
-          form.form-horizontal(method='post', action='/users')
-            .form-group
-              label.control-label Username:
-              input.form-control(type='text', name='username', placeholder='Username')
-            .form-group
-              label.control-label Password:
-              input.form-control(type='text', name='password', placeholder='Password')
-            .form-group
-              label.control-label E-mail:
-              input.form-control(type='text', name='email', placeholder='address@exmaple.com')
-            .form-group
-              input.btn.btn-warning(type='submit', value='Sign up')
-            hr
-            .links
-              a(href='/signin') Already have one?
+      .header
+        .title
+          | Sign up
+      .content
+        form.form-horizontal(method='post', action='/users')
+          .form-group
+            label.control-label Username:
+            input.form-control(type='text', name='username', placeholder='Username')
+          .form-group
+            label.control-label Password:
+            input.form-control(type='password', name='password', placeholder='Password')
+          .form-group
+            label.control-label E-mail:
+            input.form-control(type='text', name='email', placeholder='address@exmaple.com')
+          .form-group
+            input.btn.btn-warning(type='submit', value='Sign up')
+          hr
+          .links
+            a(href='/signin') Already have one?

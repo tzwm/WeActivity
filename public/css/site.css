@@ -637,52 +637,70 @@ a:hover {
 .steps-panel .steps .step .headbar {
   display: block;
   padding: 5px;
-  text-align: left;
+  font-size: 15px;
+  height: 25px;
 }
 /* line 50, ../sass/_steps.scss */
+.steps-panel .steps .step .headbar a {
+  padding: 0 5px;
+}
+/* line 52, ../sass/_steps.scss */
+.steps-panel .steps .step .headbar a:hover {
+  cursor: pointer;
+}
+/* line 57, ../sass/_steps.scss */
+.steps-panel .steps .step .headbar .btn-back {
+  float: left;
+}
+/* line 61, ../sass/_steps.scss */
+.steps-panel .steps .step .headbar .btn-close {
+  float: right;
+}
+/* line 66, ../sass/_steps.scss */
 .steps-panel .steps .step .header {
   line-height: 40px;
   font-size: 32px;
   padding-bottom: 10px;
   text-align: center;
 }
-/* line 57, ../sass/_steps.scss */
+/* line 73, ../sass/_steps.scss */
 .steps-panel .steps .step .content {
   height: 100%;
 }
-/* line 60, ../sass/_steps.scss */
+/* line 76, ../sass/_steps.scss */
 .steps-panel .steps .step .content button {
   display: block;
   margin: 10px auto;
 }
-/* line 65, ../sass/_steps.scss */
+/* line 81, ../sass/_steps.scss */
 .steps-panel .steps .step .content .dropzone {
   width: 400px;
   height: 75%;
   margin: 0 auto;
+  padding-top: 90px;
   font-size: 30px;
   color: #bfbfbf;
 }
-/* line 72, ../sass/_steps.scss */
+/* line 89, ../sass/_steps.scss */
 .steps-panel .steps .step .content .dropzone span {
   word-break: break-all;
 }
-/* line 77, ../sass/_steps.scss */
+/* line 94, ../sass/_steps.scss */
 .steps-panel .steps .step .content .dropzone-normal {
   border: 2px dashed #bbbbbb;
 }
-/* line 81, ../sass/_steps.scss */
+/* line 98, ../sass/_steps.scss */
 .steps-panel .steps .step .content .dropzone-error {
   border: 2px dashed #cc3333;
 }
-/* line 85, ../sass/_steps.scss */
+/* line 102, ../sass/_steps.scss */
 .steps-panel .steps .step .content .share-link {
   width: 400px;
   font-size: 20px;
   margin: 10px auto;
   word-break: break-all;
 }
-/* line 93, ../sass/_steps.scss */
+/* line 110, ../sass/_steps.scss */
 .steps-panel .steps .step .mask {
   position: absolute;
   top: 0;
@@ -693,7 +711,7 @@ a:hover {
   z-index: 2;
   padding: 0 20%;
 }
-/* line 103, ../sass/_steps.scss */
+/* line 120, ../sass/_steps.scss */
 .steps-panel .steps .step .mask .message {
   top: 45%;
 }

@@ -12,14 +12,27 @@
     $btnControl = $('#btn-control'),
     $inputFile = $('#input-select-file'),
     $mask = $('#mask'),
+    $message = $('#message'),
     $progressBar = $mask.find('.progress-bar'),
     $stepsPanel = $('#steps-panel'),
     $steps = $stepsPanel.find('.steps'),
-    $stepBack = $steps.find('.headbar > span'),
+    $stepClose = $steps.find('.headbar > .btn-close'),
     $stepUpload = $('#step-upload'),
     $stepControl = $('#step-controlling-page'),
     $stepShare = $('#step-share'),
     formData = null,
+    showProgress = function showProgress(evt) {
+      if (evt.lengthComputable) {
+        var percentComplete = (evt.loaded / evt.total) * 100;
+        $progressBar.css({
+          width: percentComplete + '%'
+        });
+        if (percentComplete == 100) {
+          $message.text('Processing');
+          $progressBar.addClass('progress-bar-success');
+        }
+      }
+    },
     handleUpload = function (formData) {
       $.ajax({
         url: '/tryit/new',
@@ -29,12 +42,23 @@
         dataType: 'json',
         data: formData,
         enctype: 'multipart/form-data',
+        xhr: function () {
+          var xhr = $.ajaxSettings.xhr();
+          if (xhr.upload) {
+            xhr.upload.addEventListener('progress', showProgress, false);
+          } else {
+            console.log("Upload progress is not supported.");
+          }
+          return xhr;
+        },
         beforeSend: function () {
           $mask.removeClass('hidden');
+          $message.text('Uploading');
           $progressBar
             .removeClass('progress-bar-danger')
-            .removeClass('progress-bar-success').
-            text('Uploading');
+            .removeClass('progress-bar-success')
+            .parent()
+            .addClass('progress-striped');
         },
         success: function (data) {
           // change the
@@ -43,7 +67,10 @@
           $stepShare.find('img').attr('src', data.clientImg);
           $stepShare.find('.share-link > a').attr('href', data.clientURL).text(data.clientURL);
 
-          $progressBar.addClass('progress-bar-success').text('Upload successfully!');
+          $message.text('Upload successfully!');
+          $progressBar
+            .parent()
+            .removeClass('progress-striped');
 
           setTimeout(function () {
             $mask.addClass('hidden');
@@ -65,7 +92,8 @@
         },
         error: function () {
           $dropzone.removeClass('dropzone-normal').addClass('dropzone-error');
-          $progressBar.addClass('progress-bar-danger').text('Upload failed');
+          $message.text('Upload failed');
+          $progressBar.addClass('progress-bar-danger');
           setTimeout(function () {
             $mask.addClass('hidden');
           }, 1000);
@@ -108,7 +136,6 @@
     });
 
   $btnControl.on('click', function () {
-    console.log($steps.css('top') + '  ' + $stepControl.height());
     $steps.animate({
       top: -$stepControl.height() + $steps.position().top
     }, 1000);
@@ -123,7 +150,39 @@
       }, 1000);
   });
 
-  $stepBack.on('click', function() {
+  // back
+  $stepControl.find('.btn-back').on('click', function () {
+    $steps.animate({
+      top: $stepControl.height() + $steps.position().top
+    }, 1000);
+    $stepControl.animate({
+      opacity: 0
+    }, 1000);
+    $stepUpload
+      .removeClass('hidden')
+      .css({opacity: 0})
+      .animate({
+        opacity: 1
+      }, 1000);
+  });
+
+  $stepShare.find('.btn-back').on('click', function () {
+    console.log($stepShare.height() + $steps.position().top);
+    $steps.animate({
+      top: $stepShare.height() + $steps.position().top
+    }, 1000);
+    $stepShare.animate({
+      opacity: 0
+    }, 1000);
+    $stepControl
+      .removeClass('hidden')
+      .css({opacity: 0})
+      .animate({
+        opacity: 1
+      }, 1000);
+  });
+
+  $stepClose.on('click', function () {
     $stepsPanel.addClass('hidden');
     $steps.css({
       top: 0

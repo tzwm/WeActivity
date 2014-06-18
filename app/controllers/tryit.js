@@ -12,7 +12,7 @@ exports.show = function (req, res) {
 
 
 function getQRCode(data) {
-  var API = 'https://api.qrserver.com/v1/create-qr-code/?size=320x320&data='
+  var API = 'https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=';
 
   return API+data;
 }
@@ -34,7 +34,7 @@ exports.create = function (req, res) {
     if (err) {
       doError(err, req, res);
       return;
-    };
+    }
 
     var slide = new Slide();
     var filename = files.slide.path;
@@ -65,5 +65,5 @@ exports.create = function (req, res) {
       });
     });
   });
-}
+};
 

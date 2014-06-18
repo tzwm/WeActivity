@@ -44,7 +44,23 @@
       .headbar {
         display: block;
         padding: 5px;
-        text-align: left;
+        font-size: 15px;
+        height: 25px;
+
+        a {
+          padding: 0 5px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .btn-back {
+          float: left;
+        }
+
+        .btn-close {
+          float: right;
+        }
       }
 
       .header {
@@ -66,6 +82,7 @@
           width: 400px;
           height: 75%;
           margin: 0 auto;
+          padding-top: 90px;
           font-size: 30px;
           color: #bfbfbf;
 
